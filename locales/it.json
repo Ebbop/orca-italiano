@@ -8838,6 +8838,40 @@
      "d3dc559225": "Impossibile copiare il comando di installazione.",
      "f08d45293d": "Copia comando"
     },
+    "PluginDevelopmentSection": {
+     "add": "Aggiungi percorso",
+     "pathLabel": "Percorso cartella plugin di sviluppo",
+     "pathRequired": "Inserisci un percorso di cartella del plugin.",
+     "placeholder": "/Users/you/plugins/my-plugin oppure C:\\Users\\you\\plugins\\my-plugin",
+     "remove": "Rimuovi",
+     "title": "Sviluppo"
+    },
+    "PluginMarketplaceBrowser": {
+     "addSource": "Aggiungi marketplace",
+     "clearSearch": "Cancella ricerca",
+     "empty": "I marketplace configurati non elencano alcun plugin.",
+     "emptyTitle": "Ancora nulla elencato",
+     "loading": "Caricamento plugin del marketplace…",
+     "manageSources": "Gestisci origini",
+     "noInstalled": "I plugin che installi compaiono qui.",
+     "noInstalledTitle": "Nessun plugin installato",
+     "noResults": "Nessun plugin del marketplace corrisponde a questa ricerca.",
+     "noResultsTitle": "Nessun plugin corrispondente",
+     "noSourcesTitle": "Nessun marketplace configurato",
+     "refresh": "Aggiorna",
+     "refreshing": "Aggiornamento…",
+     "tryAgain": "Riprova"
+    },
+    "PluginsSettingsSection": {
+     "empty": "Sfoglia la scheda Tutti per installare plugin da un marketplace.",
+     "emptyTitle": "Nessun plugin installato",
+     "install": "Installa plugin",
+     "loading": "Caricamento plugin…",
+     "noInstalledResults": "Nessun plugin installato corrisponde a questa ricerca.",
+     "noInstalledResultsTitle": "Nessun plugin corrispondente",
+     "systemLabel": "Sistema dei plugin",
+     "title": "Plugin"
+    },
     "PrivacyDiagnosticBundleControls": {
      "19ec5e29b3": "Raccoglie l'attività recente dell'app e gli errori in un file oscurato che puoi revisionare prima di inviarlo. Niente viene caricato finché non scegli di inviarlo.",
      "2801d4ce22": "Copia ID di riferimento",
@@ -11973,6 +12007,16 @@
       "eee028ae14": "dispatch",
       "f278fd04db": "codex",
       "f5d39af41e": "agenti secondari"
+     }
+    },
+    "plugins": {
+     "search": {
+      "description": "Installa e gestisci i plugin sperimentali di Orca.",
+      "development": "plugin di sviluppo",
+      "install": "installa plugin",
+      "logs": "log del plugin",
+      "permissions": "permessi del plugin",
+      "title": "Plugin"
      }
     },
     "privacy": {
