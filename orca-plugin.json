@@ -3,10 +3,9 @@
  "manifestVersion": 2,
  "execution": "data",
  "id": "italiano",
- "publisher": "ebbop",
  "name": "Italiano",
  "version": "1.4.255",
- "description": "Traduzione italiana dell'interfaccia di Orca (allineata a Orca 1.4.255).",
+ "description": "Interfaccia di Orca in italiano, allineata a Orca 1.4.255. Pacchetto della community, non ufficiale.",
  "engines": {
   "orca": ">=1.4.246"
  },
@@ -19,5 +18,10 @@
    }
   ]
  },
- "license": "MIT"
+ "license": "MIT",
+ "icon": "assets/icon.png",
+ "cover": {
+  "path": "assets/cover.png",
+  "alt": "Illustrazione di una finestra in stile Orca con le impostazioni in italiano e la lingua Italiano selezionata."
+ }
 }
