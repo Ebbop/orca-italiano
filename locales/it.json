@@ -18800,7 +18800,7 @@
     "notDeliveredSendAgain": "Questo messaggio non è stato consegnato. Invialo di nuovo per continuare.",
     "notSignedIn": "{{agent}} non ha eseguito l'accesso con l'account selezionato.",
     "pluginInputRequired": "{{agent}} si è fermato perché il plugin «{{plugin}}» attende un input in un riquadro del terminale. Disattiva il plugin per le sessioni di chat oppure esegui l'attività in un terminale di {{agent}}.",
-    "previousExitUnverifiable": "Orca non ha potuto confermare che il processo precedente di {{agent}} sia terminato. I messaggi restano in attesa di essere inviati finché Orca non conferma la terminazione.",
+    "previousExitUnverifiable": "Impossibile arrestare l'esecuzione precedente di {{agent}}.",
     "providerExitedAnswer": "{{agent}} si è interrotto, quindi la tua risposta non è stata inviata. Invia un messaggio per continuare.",
     "providerExitedRejection": "{{agent}} si è fermato prima che questo messaggio fosse inviato.",
     "providerExitedRow": "{{agent}} si è fermato mentre questa risposta era in corso. Puoi continuare in questa conversazione.",
