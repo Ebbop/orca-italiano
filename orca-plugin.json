@@ -4,8 +4,8 @@
  "execution": "data",
  "id": "italiano",
  "name": "Italiano",
- "version": "1.4.261",
- "description": "Interfaccia di Orca in italiano, allineata a Orca 1.4.261. Pacchetto della community, non ufficiale.",
+ "version": "1.4.266",
+ "description": "Interfaccia di Orca in italiano, allineata a Orca 1.4.266. Pacchetto della community, non ufficiale.",
  "engines": {
   "orca": ">=1.4.246"
  },
