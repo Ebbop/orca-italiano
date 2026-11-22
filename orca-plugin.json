@@ -23,5 +23,10 @@
  "cover": {
   "path": "assets/cover.png",
   "alt": "Illustrazione di una finestra in stile Orca con le impostazioni in italiano e la lingua Italiano selezionata."
- }
+ },
+ "author": {
+  "name": "jAI Studio",
+  "url": "https://jaistudio.it"
+ },
+ "homepage": "https://jaistudio.it"
 }

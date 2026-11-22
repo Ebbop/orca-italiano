@@ -1,7 +1,7 @@
 # Italiano per Orca
 
 Traduzione italiana dell'interfaccia di [Orca](https://github.com/stablyai/orca), come plugin di lingua.
-Solo dati: nessun codice viene eseguito.
+Solo dati: nessun codice viene eseguito. A cura di [jAI Studio](https://jaistudio.it).
 
 > Pacchetto **non ufficiale**, fatto dalla community. Non è affiliato né approvato da Stably / Lovecast Inc.
 
@@ -23,5 +23,5 @@ Segnalazioni e correzioni: apri una issue in questo repository.
 
 # Italian for Orca
 
-Unofficial, community-made Italian UI language pack for Orca. Data only. Not affiliated with or
+Unofficial, community-made Italian UI language pack for Orca by [jAI Studio](https://jaistudio.it). Data only. Not affiliated with or
 endorsed by Stably / Lovecast Inc. Licensed under MIT; see `LICENSE`.
