@@ -4,8 +4,8 @@
  "execution": "data",
  "id": "italiano",
  "name": "Italiano",
- "version": "1.4.271",
- "description": "L’interfaccia di Orca in italiano: 22.000 testi tradotti su 22.000 (100%), allineata a Orca 1.4.271. Pacchetto della community, non ufficiale.",
+ "version": "1.4.272",
+ "description": "jAI Studio · 22.661 testi su 22.661 (100%), allineato a Orca 1.4.272. Pacchetto della community, non ufficiale.",
  "engines": {
   "orca": ">=1.4.246"
  },

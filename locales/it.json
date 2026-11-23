@@ -36,6 +36,7 @@
    "chatDescriptionAgySignedOut": "Le nuove chat usano agy, che non ha ancora effettuato l’accesso. Esegui agy su questo host per accedere.",
    "chatDescriptionAgyVersion": "Le nuove chat vengono eseguite sul tuo agy (v{{version}}) e sul suo account qui sotto. Questo accesso viene usato quando agy non è disponibile.",
    "chatDescriptionInstallAgy": "Installa agy qui sotto per usare Chat. Accede con il proprio account.",
+   "chatDescriptionKeyOnAgy": "Le nuove chat vengono eseguite su agy con l’accesso qui sotto, separato da agy nel terminale.",
    "chatDescriptionManagedVersion": "Le nuove chat vengono eseguite sulla copia di Orca (v{{version}}), quindi Chat funziona anche senza agy installato.",
    "chatDescriptionOrcaAgy": "Le chat vengono eseguite sulla copia di agy di Orca e usano l’accesso di agy.",
    "chatDescriptionOrcaAgyVersion": "Le chat vengono eseguite sull’agy di Orca (v{{version}}) e usano l’accesso di agy.",
@@ -124,6 +125,8 @@
     "description": "Usa l’accesso a Claude Code per controllare utilizzo, crediti e account inattivi. Disattiva per usare solo le letture dal terminale in tempo reale.",
     "title": "Rilevamento dell’utilizzo di Claude"
    },
+   "organizationSuffix": "Organizzazione ···{{suffix}}",
+   "personalOrganization": "Personale",
    "profileSwitching": "Il cambio si applica al prossimo Claude che avvii in qualsiasi scheda. Le sessioni in corso mantengono il proprio account.",
    "signIn": "Accedi",
    "signInAgain": "Accedi di nuovo",
@@ -193,6 +196,11 @@
    "unnamedAccount": "Account Claude",
    "usageSignInLabel": "Accedi di nuovo",
    "usageSignInMessage": "L’account Claude selezionato richiede un nuovo accesso. Apri Impostazioni > Account provider AI, oppure scegli Predefinito di sistema."
+  },
+  "codex": {
+   "usageSignInLabel": "Disconnesso",
+   "usageSignInMessage": "Accedi per vedere l’utilizzo.",
+   "usageSignInSettingsMessage": "Apri Impostazioni → Account per accedere."
   },
   "hostSignIn": {
    "cancel": "Annulla",
@@ -2115,12 +2123,10 @@
      "showMore": "Mostra di più"
     },
     "AutomationRunHistory": {
-     "13988187b3": "Token",
      "149c0b49c7": "Spazio di lavoro",
      "402651bfb6": "Ancora nessuna esecuzione.",
      "86a248187e": "Spesa",
      "8faaa00726": "Esegui",
-     "a00e38d1a3": "n/d",
      "historyUnavailable": "La cronologia delle esecuzioni non è disponibile da questo host. Questo non significa che l’automazione sia fallita o non abbia esecuzioni."
     },
     "AutomationRunsDashboard": {
@@ -2145,7 +2151,6 @@
      "status": "Stato",
      "successful24h": "Riuscite · 24h",
      "successful7d": "Riuscite · 7gg",
-     "trigger": "Attiva",
      "triggered": "Attivata"
     },
     "AutomationSchedulePicker": {
@@ -2215,7 +2220,6 @@
      "moved": "Automazione spostata su {host}.",
      "newAutomation": "Nuova automazione",
      "noRunUsageYet": "Ancora nessun utilizzo di esecuzione",
-     "noWorkspace": "Nessuno spazio di lavoro",
      "ownerChanged": "Questa automazione ha cambiato host. Aggiorna e riprova.",
      "paused": "In pausa",
      "retryFullOutput": "Riprova",
@@ -2501,7 +2505,6 @@
      "runCountSummary_other": "{{count}} esecuzioni · completate: {{completed}}"
     },
     "runIdentity": {
-     "details": "Dettagli",
      "needsCredentials": "{{host}} richiede le credenziali per riconnettersi, quindi questa esecuzione non è partita.",
      "newerRun": "Esecuzione più recente",
      "noFailureReason": "Questa esecuzione non è partita e non è stato registrato alcun motivo.",
@@ -2549,10 +2552,15 @@
     },
     "usage": {
      "costUnavailable": "n/d",
+     "spent": "{{spend}} spesi",
+     "tokens": "{{tokens}} token",
      "tokensAndCost": "{{tokens}} token · {{cost}}",
      "tokensAndCost_many": "{{tokens}} token · {{cost}}",
      "tokensAndCost_one": "{{tokens}} token · {{cost}}",
-     "tokensAndCost_other": "{{tokens}} token · {{cost}}"
+     "tokensAndCost_other": "{{tokens}} token · {{cost}}",
+     "tokens_many": "{{tokens}} token",
+     "tokens_one": "{{tokens}} token",
+     "tokens_other": "{{tokens}} token"
     }
    },
    "browser-pane": {
@@ -8436,6 +8444,12 @@
       "shellEnvTitle": "Usa l’ambiente della tua shell",
       "shellEnvToggleLabel": "Attiva o disattiva l’uso dell’ambiente della tua shell"
      },
+     "sharedCodexServers": {
+      "copy": "Usa meno memoria e avvia più velocemente le nuove chat. Se un processo condiviso si interrompe, tutte le sue chat si riconnettono. Vale per le chat su questo computer avviate dopo la modifica; gli host remoti e WSL mantengono un processo per chat.",
+      "description": "Le chat Codex con la stessa configurazione condividono un unico processo in background invece di avviarne uno per chat.",
+      "title": "Server Codex condivisi",
+      "toggleLabel": "Attiva o disattiva i server Codex condivisi"
+     },
      "worktreeCardStyle": {
       "ariaLabel": "Stile della scheda",
       "classic": "Classico",
@@ -11164,7 +11178,7 @@
     },
     "bundledSkillSetupCopy": {
      "attentionBusy": "Richiede attenzione · Un’altra installazione di skill è ancora in corso qui",
-     "attentionEdited": "Richiede attenzione · Hai modificato questa copia",
+     "attentionDiffersFromOrca": "Richiede attenzione · Questa copia è diversa da quella di Orca",
      "attentionOther": "Richiede attenzione · Una skill diversa usa già questo nome",
      "attentionSharedNotCurrent": "Richiede attenzione · La copia condivisa usata da questa cartella non è quella di Orca",
      "attentionUnreadable": "Richiede attenzione · Orca non può leggere tutti i file di questa copia",
@@ -11174,6 +11188,9 @@
      "installedForAgent": "Installato per {{value0}}",
      "installedForAgents": "Installato per {{value0}} agenti",
      "installedForMore": "Installato per altri {{value0}} agenti",
+     "replaceMovesCopyToBackup": "La sostituzione sposta la copia attuale, compresi eventuali file extra, in un backup.",
+     "replaceMovesCopyToFolder": "La sostituzione sposta la copia attuale, compresi eventuali file extra, in {{folder}}.",
+     "replaceMovesCopyToFolderOnHost": "La sostituzione sposta la copia attuale, compresi eventuali file extra, in {{folder}} su {{host}}.",
      "replacedWithBackup": "Sostituito · La tua copia è stata salvata come backup",
      "resultUpdateSkippedAgent": "{{result}} · Aggiornamento saltato in {{agent}}: {{reason}}",
      "resultUpdateSkippedPlaces": "{{result}} · Aggiornamento saltato in {{places}} posizioni: {{reason}}"
@@ -11469,6 +11486,12 @@
        "status": "stato",
        "worktree": "worktree",
        "worktrees": "worktree"
+      },
+      "sharedCodexServers": {
+       "codex": "codex",
+       "description": "Le chat Codex con la stessa configurazione condividono un unico processo in background invece di avviarne uno per chat.",
+       "memory": "memoria",
+       "title": "Server Codex condivisi"
       },
       "worktreeCardStyle": {
        "description": "Scegli l’aspetto delle schede degli spazi di lavoro nella barra laterale.",
@@ -12157,6 +12180,8 @@
      "checking": "Controllo dello stato dell’account…",
      "connected": "Connesso",
      "description": "Condividi il lavoro all’istante e raggiungi il tuo desktop da Orca Mobile ovunque tu sia.",
+     "deviceReportNamedViewers": "I proprietari e gli amministratori di {{teams}} possono vedere le segnalazioni di questo dispositivo.",
+     "deviceReportViewers": "I proprietari e gli amministratori del team possono vedere le segnalazioni di questo dispositivo.",
      "keywordAccount": "account",
      "keywordCloud": "cloud",
      "keywordLogin": "accesso",
@@ -12164,9 +12189,12 @@
      "keywordRelay": "relay",
      "keywordSignIn": "accedi",
      "keywordSignOut": "esci",
+     "managed": "Il tuo team gestisce alcune impostazioni di Orca.",
      "reconnectRequired": "La sessione è scaduta. Accedi di nuovo per usare le funzioni cloud.",
      "relayDescription": "Collega Orca Mobile a questo desktop tramite rete cellulare o qualsiasi Wi-Fi.",
      "relayTitle": "Orca Relay",
+     "reportingDetails": "Dettagli della segnalazione del dispositivo",
+     "reportingDisclosure": "La vista Dispositivi mostra la versione di Orca, il canale di rilascio, il nome del dispositivo, la piattaforma, lo stato degli aggiornamenti, i plugin richiesti che Orca non è riuscito a installare e quando il dispositivo ha segnalato l’ultima volta.",
      "searchDescription": "Accedi o esci dall’account usato da Artifacts e Orca Relay.",
      "signIn": "Accedi a Orca",
      "signInAgain": "Accedi di nuovo",
@@ -12473,7 +12501,6 @@
      "disconnecting": "Disconnessione…",
      "done": "Fatto",
      "editName": "Modifica",
-     "emptyDescription": "Abbina una macchina di sviluppo, una macchina cloud o un desktop a casa. Le sue sessioni restano in esecuzione lì quando questo computer va in sospensione.",
      "hideDetails": "Nascondi dettagli",
      "hideError": "Nascondi errore",
      "installHostHelp": "Solo host senza un server Orca.",
@@ -12484,6 +12511,7 @@
      "lastSeen": "Ultimo accesso {{when}}",
      "loopbackTip": "Un indirizzo 127.0.0.1 funziona solo tramite un tunnel SSH.",
      "makeDefault": "Apri qui i nuovi progetti",
+     "manageShare": "Gestisci",
      "manualUpdate": "Aggiorna Orca sull’host del server",
      "moreActions": "Altre azioni per {{name}}",
      "moreActionsTooltip": "Altre azioni",
@@ -12501,11 +12529,14 @@
      "remove": "Rimuovi…",
      "retry": "Riprova",
      "route": "Percorso",
+     "serversCaption": "Server",
      "setUp": "Configura",
      "setUpDone": "Orca è configurato su {{name}}.",
      "setUpOnSshHost": "Configura Orca su un host SSH",
      "settingUpInBackground": "Configurazione di Orca su {{name}} in background. Comparirà nell’elenco quando sarà pronto.",
+     "share": "Condividi",
      "shareDialogDescriptionRuns": "Chiunque abbia il link può eseguire comandi come te su questo computer finché non lo revochi.",
+     "shareRowHint": "Consenti a un altro Orca di connettersi qui.",
      "shareTitle": "Condividi questo computer",
      "showError": "Mostra errore",
      "shownAs": "Mostrato agli altri come {{name}}",
@@ -12520,10 +12551,14 @@
      "unreachable": "Non raggiungibile",
      "unreachableHint": "Controlla che Orca sia in esecuzione sul server e che questo computer possa raggiungerne l’indirizzo.",
      "unreachableLead": "Orca non è riuscito a raggiungere questo server.",
-     "updateAll": "Aggiorna tutti ({{count}})",
+     "updateAll": "Aggiorna tutti",
      "updateAvailable": "v{{version}} disponibile",
      "updateFailedLead": "L’ultimo aggiornamento non è stato completato.",
      "updateMenu": "Aggiorna…",
+     "updatesCount": "{{count}} aggiornamenti",
+     "updatesCount_many": "{{count}} aggiornamenti disponibili",
+     "updatesCount_one": "{{count}} aggiornamento disponibile",
+     "updatesCount_other": "{{count}} aggiornamenti disponibili",
      "version": "v{{version}}"
     },
     "settingOwnership": {
@@ -13462,8 +13497,6 @@
      "branchNameKept": "Nome del branch mantenuto",
      "ca3b225195": "Generazione automatica del nome ramo non riuscita",
      "couldNotGenerateBranchName": "Orca non è riuscito a generare un nome di branch per <name>{{name}}</name> dal primo messaggio dell’agente.",
-     "dismiss": "Chiudi",
-     "dismissing": "Chiusura…",
      "eab8b45238": "Copia errore",
      "errorDetailsAt": "Dettagli dell’errore · {{time}}",
      "namingBranch": "Assegnazione del nome al branch…",
@@ -14628,6 +14661,11 @@
     }
    },
    "skills": {
+    "SkillBackupPathLine": {
+     "movedTo": "Vecchia copia spostata in:",
+     "movedToOnHost": "Vecchia copia spostata su {{host}}:",
+     "showFolder": "Mostra cartella"
+    },
     "SkillBundleInstallFlow": {
      "01c5a13e01": "Chiudi",
      "01c5a13e02": "Annulla installazione",
@@ -15066,7 +15104,7 @@
     },
     "skillPlanOpCopy": {
      "busy": "Un’altra installazione è ancora in corso",
-     "edited": "Skill modificata fuori da Orca",
+     "differsFromOrca": "Questa copia è diversa da quella di Orca",
      "install": "Installa",
      "installAvailable": "Installazione disponibile",
      "installFor": "Installa per {{value0}}",
@@ -15083,6 +15121,14 @@
      "repair": "Ripara",
      "repairAvailable": "Riparazione disponibile",
      "replace": "Sostituisci",
+     "replaceMovesCopy": "La sostituzione sposta questa copia in {{folder}}.",
+     "replaceMovesCopyOnHost": "La sostituzione sposta questa copia in {{folder}} su {{host}}.",
+     "replaceMovesFile": "La sostituzione sposta questo file in {{folder}}.",
+     "replaceMovesFileOnHost": "La sostituzione sposta questo file in {{folder}} su {{host}}.",
+     "replaceMovesFolder": "La sostituzione sposta l’intera cartella, compresi eventuali file extra, in {{folder}}.",
+     "replaceMovesFolderOnHost": "La sostituzione sposta l’intera cartella, compresi eventuali file extra, in {{folder}} su {{host}}.",
+     "replaceMovesLink": "La sostituzione sposta questo link in {{folder}}.",
+     "replaceMovesLinkOnHost": "La sostituzione sposta questo link in {{folder}} su {{host}}.",
      "replacedWithBackup": "Sostituita · La tua copia è stata salvata come backup",
      "sharedFolder": "Cartella condivisa",
      "sharedNotCurrent": "La copia condivisa non è quella di Orca",
@@ -15749,6 +15795,7 @@
       "rateLimitResetsAvailable_many": "{{count}} reset del rate limit disponibili",
       "rateLimitResetsAvailable_one": "{{count}} reset del rate limit disponibile",
       "rateLimitResetsAvailable_other": "{{count}} reset del rate limit disponibili",
+      "rateLimitResetsUnsupportedWsl": "{{count}} reimpostazioni disponibili · non ancora in WSL",
       "remoteServerLabel": "Server remoto",
       "signedOutAccounts": "Disconnesso",
       "staleCodexSessions": "{{count}} sessioni Codex sono ancora sul vecchio account.",
@@ -15812,7 +15859,8 @@
       "resetsNow": "Si azzera ora",
       "title": "Utilizzo",
       "usageDetails": "Dettagli e cronologia utilizzo",
-      "usageUnavailable": "Utilizzo non disponibile"
+      "usageUnavailable": "Utilizzo non disponibile",
+      "wslUsageNotShown": "L’utilizzo di WSL non è ancora mostrato"
      },
      "WorkspaceSpaceCompactPanel": {
       "0582df6d2e": "Analizza",
@@ -16053,6 +16101,7 @@
       "remoteOwnerNotConfigured": "Non configurato su {{server}}",
       "remoteOwnerSignInSavedHere": "Il suo accesso è salvato solo su questo computer.",
       "remoteOwnerUnreachable": "Utilizzo non disponibile — impossibile raggiungere {{server}}",
+      "unsupportedOwner": "Utilizzo non disponibile per {{server}}",
       "updatedAgo": "Aggiornato {{time}}",
       "usage": {
        "noSubscription": {
@@ -18353,7 +18402,11 @@
     "trustWorkspaceNamed": "{{agent}} è in attesa che tu autorizzi questa cartella.",
     "update": "L’agente è in attesa di una tua risposta a una richiesta di aggiornamento."
    },
+   "botFolderMissing": "La cartella del bot non è più disponibile.",
+   "botMissing": "Il bot con cui viene eseguita questa automazione non esiste più.",
+   "botPaused": "{{bot}} è in pausa, quindi Orca ha saltato questa esecuzione.",
    "botProviderErrorNotSaved": "Il turno del bot non è riuscito, ma questa esecuzione non ha salvato l’errore del provider. La Chat originale potrebbe contenere più dettagli.",
+   "botsOff": "I bot sono disattivati nelle Impostazioni, quindi Orca ha saltato questa esecuzione.",
    "destinationChanged": "La destinazione dell’automazione è cambiata prima che questa esecuzione potesse partire.",
    "hooksReviewBlocked": "L’agente è in attesa che qualcuno controlli gli hook nuovi o modificati (\"Hooks need review\"). Apri questa esecuzione e approvali oppure rimuovili. Le esecuzioni pianificate continuano e andranno a buon fine quando non resterà più nulla da controllare.",
    "legacyTwinHosts": "Questa automazione è stata salvata prima che Orca registrasse su quale host viene eseguita, e il suo progetto si trova su più host. Apri l’automazione e scegli l’host su cui deve essere eseguita.",
@@ -18413,6 +18466,7 @@
    "stopWorker": "Ferma {{value0}}",
    "thread": "Thread {{source}}",
    "title": "Attività",
+   "waitsOnBackground": "In attesa della sua attività in background",
    "worker": "Worker",
    "workers": "Worker",
    "workspace": "Spazio di lavoro"
@@ -18458,6 +18512,32 @@
     "searchCaption": "App di Composio",
     "withComposio": "Con Composio"
    },
+   "composioLine": {
+    "airtable": "Base, tabelle e record",
+    "asana": "Attività, progetti e commenti",
+    "box": "File e cartelle",
+    "calendly": "Eventi, invitati e link di prenotazione",
+    "clickup": "Attività, elenchi e documenti",
+    "confluence": "Pagine, spazi e commenti",
+    "dropbox": "File e cartelle",
+    "figma": "File, commenti e componenti",
+    "hubspot": "Contatti, aziende, trattative e ticket",
+    "intercom": "Conversazioni, contatti e articoli",
+    "jira": "Issue, progetti e sprint",
+    "microsoft_teams": "Chat, canali e riunioni",
+    "miro": "Bacheche, note adesive e frame",
+    "monday": "Bacheche, elementi e aggiornamenti",
+    "notion": "Pagine, database e commenti",
+    "one_drive": "File e cartelle",
+    "outlook": "Posta, calendario e contatti",
+    "reddit": "Post, commenti e subreddit",
+    "salesforce": "Account, lead e opportunità",
+    "sentry": "Issue, eventi e release",
+    "stripe": "Pagamenti, clienti e fatture",
+    "trello": "Bacheche, elenchi e schede",
+    "zendesk": "Ticket, utenti e articoli del centro assistenza",
+    "zoom": "Riunioni, registrazioni e trascrizioni"
+   },
    "couldNotSignIn": "Impossibile accedere a {{app}}",
    "custom": {
     "done": "{{app}} è su {{bot}}",
@@ -18468,10 +18548,23 @@
    },
    "done": "Fatto",
    "line": {
+    "atlassian": "Issue di Jira e pagine di Confluence",
+    "cloudflare": "Gestisci Workers, DNS e il resto di un account",
+    "context7": "Documentazione ed esempi aggiornati per le librerie di codice",
+    "datadog": "Cerca in log, metriche e monitor",
     "github": "Menzioni ed eventi su issue e PR",
+    "gitlab": "Leggi e aggiorna issue e merge request",
     "google": "Gmail, Calendar e Drive, a tuo nome",
     "linear": "Issue assegnate e menzioni",
-    "slack": "Messaggi e menzioni"
+    "neon": "Esegui SQL e gestisci i branch Postgres",
+    "netlify": "Pubblica i siti e controlla le loro build",
+    "notion": "Cerca, leggi e modifica le pagine",
+    "posthog": "Interroga le analisi di prodotto e i feature flag",
+    "sentry": "Analizza gli errori e gli eventi che li causano",
+    "slack": "Messaggi e menzioni",
+    "stripe": "Cerca pagamenti, clienti e abbonamenti",
+    "supabase": "Interroga i database e gestisci i progetti",
+    "vercel": "Controlla i deployment e leggi i loro log"
    },
    "mcp": {
     "addTitle": "Aggiungi {{app}}",
@@ -18542,6 +18635,7 @@
     "calendarStartingSoon": "Prima dell’inizio di una riunione",
     "githubAssigned": "Quando vieni assegnato su GitHub",
     "githubCiFailed": "Quando la CI fallisce",
+    "githubCiFinished": "Quando la CI termina",
     "githubCiPassed": "Quando la CI ha successo",
     "githubComment": "Su un commento GitHub",
     "githubDeployFinished": "Quando un deployment termina",
@@ -18663,6 +18757,7 @@
    "moreMatches_one": "{{count}} altra corrispondenza. Cerca una parte più lunga del nome per restringere.",
    "moreMatches_other": "{{count}} altre corrispondenze. Cerca una parte più lunga del nome per restringere.",
    "needsYou": "Richiede la tua attenzione",
+   "needsYouCount": "In attesa di te: {{count}}",
    "new": "Nuova chat",
    "newTag": "Nuova",
    "noMatch": "Nessuna chat o worker corrisponde.",
@@ -18690,7 +18785,6 @@
    "unread": "Non letta",
    "untitled": "Nuova chat",
    "waiting": "In attesa di te",
-   "waitingCount": "{{count}} in attesa",
    "workers": "Worker"
   },
   "cloudSignIn": {
@@ -18895,6 +18989,97 @@
    "nameTaken": "Un altro bot ha già questo nome.",
    "unsavedDrafts": "La sua cartella contiene modifiche non salvate nell’editor. Salvale o chiudile, poi elimina di nuovo."
   },
+  "failures": {
+   "attachmentExpired": "{{names}}: questo allegato è scaduto. Allegalo di nuovo.",
+   "attachmentTooLarge": "{{name}} supera {{maxMb}} MB.",
+   "attachmentUnreadable": "Impossibile leggere {{name}}.",
+   "attachmentUploading": "{{name}} è ancora in caricamento.",
+   "commentAttachFailed": "Impossibile allegare i file. Commenta di nuovo tra poco.",
+   "commentAttachmentsUnavailable": "Questo computer non può accettare allegati in questo momento. Commenta di nuovo tra poco.",
+   "commentChatDeleted": "La chat di questo elemento è stata eliminata, quindi qui non si possono allegare file.",
+   "commentFileNotAbsolute": "{{path}}: indica il file con il percorso completo.",
+   "commentFilesTooMany": "I commenti accettano fino a {{max}} file oltre alle immagini.",
+   "commentImageNotStored": "In un commento si possono inserire solo immagini incollate o allegate.",
+   "commentImagesTooLarge": "Queste immagini raggiungono {{totalMb}} MB. Un commento accetta fino a {{maxMb}} MB.",
+   "commentImagesTooMany": "I commenti accettano fino a {{max}} immagini.",
+   "groupAttachFailed": "Impossibile allegare i file. Riprova a inviare tra poco.",
+   "groupAttachmentsUnavailable": "Questo computer non può accettare allegati in questo momento. Riprova a inviare tra poco.",
+   "groupBotGone": "Un bot selezionato non è più disponibile.",
+   "groupBotTwice": "Scegli ogni bot una sola volta.",
+   "groupBotUnavailable": "Questo bot è in pausa o non disponibile. Nessun altro bot è stato sostituito.",
+   "groupChanged": "Il gruppo è cambiato. Riapri questa finestra e riprova.",
+   "groupChangedBeforeSend": "Il gruppo è cambiato. Controlla i membri attuali prima di inviare.",
+   "groupEmptyBeforeSend": "Tutti i bot hanno lasciato questo gruppo. Aggiungi un bot prima di inviare.",
+   "groupEmptyBeforeThread": "Tutti i bot hanno lasciato questo gruppo. Aggiungi un bot prima di avviare un thread.",
+   "groupImageNotStored": "In un messaggio di gruppo si possono inserire solo immagini incollate o allegate.",
+   "groupImagesTooLarge": "Queste immagini raggiungono {{totalMb}} MB. Un messaggio di gruppo accetta fino a {{maxMb}} MB.",
+   "groupImagesTooMany": "I messaggi di gruppo accettano fino a {{max}} immagini.",
+   "groupLocalOnly": "Al momento i gruppi supportano solo i bot di questo host di esecuzione locale.",
+   "groupMailNeverStarted": "Questo messaggio non ha mai avviato un turno.",
+   "groupMentionAmbiguous": "Correggi la menzione ambigua del bot prima di inviare.",
+   "groupMentionUnavailable": "Correggi la menzione del bot non disponibile o ambigua prima di inviare.",
+   "groupMessageIdReused": "L’identità del messaggio è già stata usata.",
+   "groupNameTaken": "{{name}} è già in questo gruppo. I membri devono avere nomi diversi perché le menzioni siano univoche.",
+   "groupNeedsLocalBot": "Questo gruppo richiede almeno un bot su questo computer.",
+   "groupPeerTooOld": "Aggiorna Orca su {{host}} per aggiungere i suoi bot a un gruppo.",
+   "groupPostFromHost": "Per scrivere in un gruppo con bot su altri computer, usa {{host}}.",
+   "groupRemoteUnreachable": "Impossibile raggiungere {{host}}. {{detail}}",
+   "groupRemoteUnreachableRetry": "Impossibile raggiungere {{host}}. {{detail}} Invia di nuovo per riprovare.",
+   "groupReplierGone": "Scegli un membro attuale in Risposte della stanza.",
+   "groupReplierNotMember": "Scegli un membro attuale della stanza in Risposte della stanza.",
+   "groupRequestUnverifiable": "Impossibile verificare la richiesta di gruppo originale in coda.",
+   "groupTurnInactive": "Questa richiesta di gruppo o questo membro non è più attivo.",
+   "lookAsleep": "L’ultima occhiata è stata saltata perché il computer era in sospensione.",
+   "lookCouldNotStart": "Impossibile avviare l’ultima occhiata.",
+   "lookInterrupted": "Orca si è fermato durante l’ultima occhiata.",
+   "lookTimedOut": "L’ultima occhiata è stata interrotta dopo {{minutes}} min.",
+   "lookUnfinished": "L’ultima occhiata non è stata completata.",
+   "tidyUpAllSkipped": "Orca ha saltato tutte le modifiche richieste dall’ultimo riordino, quindi non è cambiato nulla. ({{detail}})",
+   "tidyUpAsleep": "L’ultimo riordino è stato saltato perché il computer era in sospensione.",
+   "tidyUpBadTopic": "L’ultimo riordino ha indicato un file di argomento che Orca non può scrivere, quindi non è cambiato nulla.",
+   "tidyUpChanged": "MEMORY.md è cambiato durante l’ultimo riordino, quindi non è cambiato nulla.",
+   "tidyUpCouldNotStart": "Impossibile avviare l’ultimo riordino.",
+   "tidyUpMovedOnly": "L’ultimo riordino ha spostato le righe di stato in memory/journal/, ma Orca non ha potuto usare il resto della risposta. ({{detail}})",
+   "tidyUpNoDraft": "L’ultimo riordino non ha risposto con un nuovo MEMORY.md.",
+   "tidyUpNoOps": "La risposta dell’ultimo riordino non era un elenco di modifiche leggibile da Orca.",
+   "tidyUpNotApplied": "Impossibile salvare le modifiche dell’ultimo riordino, quindi non è cambiato nulla.",
+   "tidyUpNotCopied": "L’ultimo riordino ha archiviato una riga che MEMORY.md non contiene; i fatti nuovi vanno in MEMORY.md, quindi non è cambiato nulla.",
+   "tidyUpNotListLines": "L’ultimo riordino non è stato eseguito: MEMORY.md ha più di poche righe che non sono voci di elenco, e il riordino delle operazioni legge solo le voci di elenco.",
+   "tidyUpTimedOut": "L’ultimo riordino è stato interrotto dopo {{minutes}} min.",
+   "tidyUpTooLong": "Il MEMORY.md dell’ultimo riordino superava {{max}} righe e non era più corto, quindi non è cambiato nulla.",
+   "tidyUpTooManyAdded": "L’ultimo riordino ha aggiunto troppe righe nuove in una volta, quindi non è cambiato nulla.",
+   "tidyUpTooManyFiled": "L’ultimo riordino ha archiviato più di {{max}} righe in una volta, quindi non è cambiato nulla.",
+   "tidyUpTooManyRemoved": "L’ultimo riordino ha tolto troppe righe in una volta, quindi non è cambiato nulla.",
+   "tidyUpUnfinished": "L’ultimo riordino non è stato completato.",
+   "tidyUpUnreadChats": "Impossibile leggere le chat per l’ultimo riordino, quindi non è stato eseguito.",
+   "toolClaudeNoSignInPage": "Claude non ha aperto una pagina di accesso per {{name}}.",
+   "toolClaudePrepareFailed": "Impossibile preparare {{name}} in Claude Code. Controlla la configurazione dello strumento.",
+   "toolClaudeSignInFailed": "Claude non è riuscito ad avviare l’accesso a {{name}}.",
+   "toolCodexCheckFailed": "Codex non è riuscito a controllare o collegare gli strumenti. Controlla la sua configurazione e riprova.",
+   "toolCodexNoSignInPage": "Codex non ha fornito una pagina di accesso per {{name}}.",
+   "toolCodexNoThread": "Codex non ha avviato alcun thread per controllare gli strumenti.",
+   "toolCredentialsRaced": "Le credenziali degli strumenti del bot sono cambiate in un altro Orca. Riprova.",
+   "toolCredentialsUnreadable": "Le credenziali salvate degli strumenti del bot non sono leggibili. Inserisci di nuovo i valori dello strumento.",
+   "toolDestinationChanged": "La destinazione delle credenziali è cambiata. Inserisci di nuovo i valori salvati o rimuovi le relative righe.",
+   "toolDetailsInvalid": "I dettagli dello strumento non sono validi. Controlla il nome, l’URL o l’eseguibile e i valori.",
+   "toolGone": "Questo bot non ha più quello strumento.",
+   "toolNameTaken": "Questo bot ha già uno strumento chiamato {{name}}.",
+   "toolNameTakenByAgent": "Il tuo {{agent}} ha già uno strumento chiamato {{name}}, che ottiene anche questo bot. Scegli un altro nome con --name.",
+   "toolNameTakenByCodexStdio": "Il tuo Codex ha già uno strumento locale chiamato {{name}}, quindi {{name}} di questo bot non può essere eseguito. Rinomina lo strumento di questo bot.",
+   "toolNeedsNoSignIn": "{{name}} usa i suoi valori salvati e non richiede l’accesso.",
+   "toolNotFound": "Questo bot non ha uno strumento chiamato {{name}}.",
+   "toolNotUpdated": "Lo strumento non è stato aggiornato.",
+   "toolSavedValueGone": "Quel valore salvato non è più disponibile. Inseriscilo di nuovo o rimuovi la sua riga.",
+   "toolSignInAddressIncomplete": "Incolla l’indirizzo completo su cui si è conclusa la pagina di accesso.",
+   "toolSignInAddressWrong": "Non è l’indirizzo su cui si conclude questo accesso. Riavvialo con Connetti, accedi, poi incolla l’indirizzo mostrato dal browser.",
+   "toolSignInAgentUnsupported": "Orca esegue l’accesso a {{name}} solo per Claude Code e Codex. Aggiungilo invece con i suoi valori di accesso.",
+   "toolSignInEnded": "L’accesso era già terminato o scaduto. Riavvialo con Connetti.",
+   "toolSignInFolderFailed": "Impossibile preparare la cartella di accesso: {{detail}}",
+   "toolSignInManaged": "Orca gestisce l’accesso a questo strumento. Usa invece Accedi o Esci.",
+   "toolSourceManaged": "Orca gestisce questo strumento. Modificalo dove lo hai configurato.",
+   "toolValueMissing": "Inserisci un valore per ogni riga, oppure rimuovi la riga.",
+   "toolValuesUnmoved": "Uno strumento contiene ancora i suoi valori salvati. Riapri gli strumenti del bot per spostarli."
+  },
   "files": {
    "tab": "File"
   },
@@ -18961,6 +19146,7 @@
     "finishSetup": "Completa la configurazione",
     "notInstalled": "Accesso eseguito come @{{login}}. Installa l’app Orca sui repository in cui può lavorare.",
     "orgDescription": "{{repos}} · accesso eseguito come @{{login}}",
+    "refresh": "Aggiorna",
     "removeConfirm": "Rimuovi",
     "removeNote": "Le persone non potranno più chiedergli nulla su GitHub e le sue persone GitHub verranno cancellate. L’app Orca resta installata.",
     "unlinked": "Accedi con GitHub per collegare il tuo account GitHub."
@@ -18976,6 +19162,7 @@
   },
   "google": {
    "account": "Google · {{email}}",
+   "accountActions": "Azioni per {{email}}",
    "add": {
     "allOn": "I tuoi bot possono già usare tutti i servizi.",
     "notNow": "Non ora",
@@ -18986,22 +19173,22 @@
     "title": "Aggiungi un servizio Google",
     "turnOn": "Se hai configurato l’app Google del tuo team, attiva i nuovi servizi per il team."
    },
-   "addService": "Aggiungi un servizio",
+   "addServiceMenu": "Aggiungi un servizio…",
    "appAdded": "L’app Google del tuo team è stata aggiunta",
-   "checksAgain": "Orca ricontrolla da solo.",
    "connectDescription": "Dai ai tuoi bot l’accesso a Gmail, Calendar e Drive. Il tuo accesso resta su {{host}}.",
-   "copied": "Copiato. Invialo al tuo amministratore Google.",
    "createBotToSetUp": "Crea un bot per configurare Google",
+   "defaultBadge": "Predefinito",
    "description": "Lascia che i tuoi bot usino Gmail, Calendar e Drive a tuo nome. Il tuo accesso a Google resta su {{host}}.",
    "disconnect": {
     "confirm": "Disconnetti",
+    "promotes": "{{email}} diventa quello predefinito.",
     "remove": "Rimuovi da questo computer",
     "removeNote": "I bot smettono di usare questo account qui. Le impostazioni dei bot restano, quindi Connetti Google lo riattiva.",
+    "removeOneNote": "I bot smettono di usare questo account qui.",
     "revoke": "Rimuovi e revoca su Google",
     "revokeNote": "I bot smettono di usare questo account qui e Google annulla l’accesso di Orca ovunque fosse consentito.",
     "title": "Disconnettere {{email}}?"
    },
-   "disconnectMenu": "Disconnetti",
    "file": {
     "tooLarge": "Questo file è troppo grande per essere un file di app Google."
    },
@@ -19027,10 +19214,12 @@
     "privacyPolicy": "Link all’informativa sulla privacy dell’applicazione"
    },
    "onFor": "Attivo per {{bots}}.",
-   "openAgain": "Apri di nuovo",
-   "pasteHint": "Dopo aver cliccato su Consenti, la pagina non si carica. Incolla qui il suo indirizzo.",
    "reconnect": "Riconnetti",
    "retry": "Riprova",
+   "row": {
+    "signedOut": "Disconnesso da Google"
+   },
+   "setDefault": "Imposta come predefinito",
    "setUp": "Configura Google",
    "setUpOpens": "Apre la chat di {{bot}}",
    "setUpTime": "Circa 10 minuti",
@@ -19041,9 +19230,7 @@
    "title": "Google",
    "turnOnForBot": "Attiva Google per un bot dai Connettori del bot.",
    "updateServer": "Aggiorna questo server per connettere Google.",
-   "waiting": "Completa la connessione a Google nel browser.",
-   "waitingHow": "Scegli il tuo account e clicca su Consenti.",
-   "waitingHowPersonal": "Scegli il tuo account e clicca su Consenti. Google chiede prima una conferma: clicca su Continua."
+   "updateToAdd": "Aggiorna Orca su {{host}} per aggiungere un altro account Google."
   },
   "googleSetup": {
    "account": {
@@ -19161,6 +19348,7 @@
    "deleteGroup": "Elimina gruppo",
    "deleteGroupMenu": "Elimina gruppo…",
    "deleteTitle": "Eliminare {{name}}?",
+   "deliveryUnconfirmed": "Consegna non confermata",
    "dialogDescription": "I bot di un gruppo condividono una stanza.",
    "filter": "Filtra bot",
    "handoffsPaused": "In pausa dopo {{count}} passaggi di consegne. Rispondi per continuare.",
@@ -19197,6 +19385,7 @@
    "newThread": "Nuovo thread in {{name}}",
    "newThreadHint": "riparte da zero",
    "newThreadTab": "Nuovo thread",
+   "notStarted": "Non avviato",
    "onlyWhenMentioned": "Solo se menzionato",
    "pairedComputersOnly": "I gruppi possono aggiungere bot solo dai computer associati.",
    "panel": {
@@ -19209,6 +19398,7 @@
    },
    "peerAsked": "{{from}} ha chiesto a {{to}}",
    "peerFollowedUp": "{{bot}} ha dato seguito",
+   "peerReadItems": "{{bot}} ha letto un aggiornamento dei suoi elementi",
    "peerReplyRead": "{{reader}} ha letto la risposta di {{peer}}",
    "peerTold": "{{from}} ha detto a {{to}}",
    "pickOne": "Scegli un bot",
@@ -19233,6 +19423,7 @@
    "save": "Salva",
    "saving": "Salvataggio…",
    "startAConversationWithThisGroupMentionBots": "Avvia una conversazione con questo gruppo. Menziona i bot con @Nome o @everyone.",
+   "starting": "Avvio…",
    "stopCouldNotBeConfirmed": "Non è stato possibile confermare l’arresto.",
    "stopValue": "Ferma {{value0}}",
    "suggestMore": "{{a}}, {{b}} e altri {{count}}",
@@ -19374,6 +19565,7 @@
   },
   "items": {
    "activity": {
+    "anotherAgent": "Un altro agente",
     "canceled": "lo ha annullato",
     "changed": "ha modificato {{field}}",
     "closed": "lo ha segnato come fatto",
@@ -19392,12 +19584,14 @@
     "snoozed": "lo ha posticipato fino a {{when}}",
     "snoozedBare": "lo ha posticipato",
     "unsnoozed": "ha annullato il posticipo",
+    "waitingOn": "In attesa di",
     "workerFailed": "Worker interrotto:",
     "workerFinished": "Worker terminato:",
     "workerStarted": "Worker avviato:",
     "you": "Tu"
    },
    "ask": {
+    "heldCount": "{{count}} risposte non ancora inviate, <send>invia comunque</send>",
     "next": "Domanda successiva",
     "notSentYet": "non ancora inviato",
     "previous": "Domanda precedente",
@@ -19422,6 +19616,7 @@
     "addedAndCanceled": "Aggiunto e annullato {{items}}",
     "addedAndDone": "Aggiunto e segnato {{items}} come completato",
     "addedAndMoved": "Aggiunto e spostato {{items}} in {{status}}",
+    "anotherAgent": "Un altro agente",
     "anotherChat": "Un’altra chat",
     "askedYou": "Ti ha chiesto di {{items}}",
     "byChat": {
@@ -19473,7 +19668,6 @@
    "empty": {
     "allClear": "Niente richiede la tua attenzione e niente è in esecuzione.",
     "body": "Quando {{bot}} prende in carico qualcosa per te, comparirà qui con ciò che sta facendo e ciò che gli serve da te.",
-    "chatNeedsYou": "Niente in {{chat}} richiede la tua attenzione.",
     "filtered": "Nessun elemento corrisponde.",
     "needsYou": "Niente richiede la tua attenzione.",
     "short": "Ancora nessun elemento. Quando {{bot}} prende in carico qualcosa, comparirà qui.",
@@ -19487,7 +19681,6 @@
     "title": "titolo"
    },
    "filter": {
-    "all": "Tutte le chat",
     "chat": "Chat",
     "clearAll": "Cancella filtri",
     "label": "Filtra elementi",
@@ -19503,6 +19696,9 @@
    },
    "homeChat": "Chat principale",
    "link": {
+    "automation": "Automazione",
+    "automationEnded": "Terminata",
+    "automationOn": "Riattiverà l’agente per questo elemento",
     "fileIsFolder": "{{path}} è una cartella",
     "fileOutside": "{{path}} non è nella cartella di questo bot",
     "issue": "Issue #{{number}}",
@@ -19514,7 +19710,8 @@
    "menu": {
     "cancel": "Annulla…",
     "canceled": "Annullato…",
-    "done": "Fatto"
+    "done": "Fatto",
+    "waiting": "In attesa…"
    },
    "pill": {
     "clear": "Cancella selezione",
@@ -19524,6 +19721,7 @@
    "readFailed": "Impossibile leggere gli elementi.",
    "readFailedClosedPage": "Impossibile leggere altri elementi chiusi.",
    "readFailedStale": "Impossibile aggiornare gli elementi. Viene mostrata l’ultima lettura.",
+   "readMoreClosedFailed": "Lettura di altri elementi chiusi non riuscita",
    "retry": "Riprova",
    "row": {
     "done": "Fatto",
@@ -19560,6 +19758,7 @@
     "done": "Completato",
     "needsYou": "Serve il tuo intervento",
     "planned": "Pianificato",
+    "waiting": "In attesa",
     "working": "In corso"
    },
    "tab": "Home",
@@ -19584,6 +19783,13 @@
     "showMore": "Mostra di più",
     "shown": "Elemento {{index}} di {{total}}: {{title}}",
     "subWhere": "Elemento {{number}} · {{chat}}"
+   },
+   "wait": {
+    "confirm": "Imposta In attesa",
+    "keep": "Annulla",
+    "placeholder": "In attesa di",
+    "titleMany": "In attesa di cosa sono {{count}} elementi?",
+    "titleOne": "Cosa aspetta {{title}}?"
    }
   },
   "linear": {
@@ -19614,6 +19820,12 @@
     "outsiders": "Tutti gli altri in {{workspace}} ricevono una risposta pubblica che dice di chiedere a te."
    }
   },
+  "lookAroundEvery": {
+   "every2h": "Ogni 2 ore, dalle 8:00 alle 20:00",
+   "every4h": "Ogni 4 ore, dalle 8:00 alle 20:00",
+   "mornings": "Ogni mattina alle 8:00",
+   "twiceDaily": "Due volte al giorno, alle 8:00 e alle 13:00"
+  },
   "lookSteps": {
    "checked": "Controllato {{place}}",
    "checkedConnections": "Collegamenti controllati",
@@ -19634,6 +19846,8 @@
    "fixConnector": "Apri {{name}}",
    "open": "Apri",
    "openRun": "Apri esecuzione",
+   "pairedAsk": "{{from}} vuole scrivere a {{name}}",
+   "pairedAskDetail": "Permesso · Scrivi a {{name}}",
    "permission": "Autorizzazione richiesta",
    "permissionTool": "Autorizzazione · {{tool}}",
    "runSignIn": "Non è stato possibile eseguirla finché non accedi.",
@@ -19676,10 +19890,22 @@
    "hostUnreachable": "Impossibile raggiungere {{host}}",
    "hostUpdate": "Aggiorna Orca su {{host}}",
    "hostUpdateAction": "Aggiorna",
+   "identityReports": "Riferisce {{what}}",
+   "identityWatches": "Sorveglia {{what}}",
    "namePlaceholder": "Dai un nome al bot",
    "nextPicture": "Immagine successiva",
    "noChatAgents": "Nessun agente di chat disponibile su questo computer.",
    "openFailed": "{{name}} è stato creato ma non è stato ancora possibile aprirlo.",
+   "outfitArtist": "Artista",
+   "outfitDetective": "Detective",
+   "outfitHardHat": "Elmetto",
+   "outfitNightShift": "Turno di notte",
+   "outfitNone": "Nessun abbigliamento",
+   "outfitParty": "Festa",
+   "outfitReviewer": "Revisore",
+   "outfitScientist": "Scienziato",
+   "outfitSecurity": "Sicurezza",
+   "outfitTie": "Cravatta",
    "parts": {
     "automations": "{{count}} automazioni",
     "needsApp": "Richiede {{app}}",
@@ -19695,6 +19921,7 @@
    "pictureColor": "Colore di sfondo",
    "pictureColorCustom": "Colore personalizzato",
    "pictureMascot": "Mascotte {{n}} di {{total}}",
+   "pictureOutfit": "Abbigliamento",
    "pictureUpload": "La tua immagine",
    "previousPicture": "Immagine precedente",
    "purposeLabel": "Scopo",
@@ -19705,6 +19932,16 @@
    "takesOver": "Prende in carico",
    "uploadDropOrPaste": "<upload>Carica</upload>, trascina o incolla un’immagine",
    "uploadPasteOrDrop": "oppure carica, incolla o trascina la tua",
+   "validation": {
+    "botsUnavailable": "Bot non disponibili",
+    "computerOffline": "Offline",
+    "findingAgents": "Ricerca degli agenti…",
+    "identityTooLong": "Troppo lungo",
+    "noAgents": "Nessun agente",
+    "noAgentsAvailable": "Nessun agente disponibile",
+    "pictureLoading": "Caricamento dell’immagine…",
+    "updateOrca": "Aggiorna Orca"
+   },
    "watches": "Osserva"
   },
   "newHomeChat": {
@@ -19712,6 +19949,17 @@
    "description": "{{name}} conserva la sua anima e la sua memoria, ma non questa conversazione.",
    "hint": "riparte da zero",
    "title": "Iniziare una nuova Chat Home?"
+  },
+  "notices": {
+   "accessAsked": "{{person}} ha chiesto di usare {{bot}}",
+   "askedYou": "{{bot}} ti ha chiesto qualcosa",
+   "couldNotFinish": "{{bot}} non ha potuto finire",
+   "folderMissing": "Impossibile avviare \"{{automation}}\" perché la cartella del bot manca.",
+   "sessionRefused": "Impossibile avviare \"{{automation}}\".",
+   "turnEnded": "\"{{automation}}\" si è concluso prima di finire.",
+   "webhookHourlyCap": "\"{{automation}}\" ha raggiunto il limite di {{limit}} esecuzioni all’ora; le altre chiamate restano in attesa. Per fermarle, mettilo in pausa.",
+   "webhookNeedsLook": "Il webhook di {{bot}} richiede attenzione",
+   "webhookRefusals": "\"{{automation}}\" ha rifiutato {{refused}} chiamate negli ultimi 10 minuti. Se non le aspetti, mettilo in pausa."
   },
   "options": {
    "activeFilters": "Opzioni dei bot ({{count}} filtri attivi)",
@@ -19735,6 +19983,17 @@
    "serverReconnect": "Riconnetti",
    "serverReconnectingBody": "La connessione al server si è interrotta. Orca sta riprovando automaticamente.",
    "serverReconnectingTitle": "Riconnessione a {{host}}"
+  },
+  "pairedServers": {
+   "add": "Aggiungi un server associato",
+   "allAdded": "Tutti i server associati sono stati aggiunti",
+   "heading": "Server associati",
+   "info": "Informazioni sui server associati",
+   "none": "Nessun server associato",
+   "remove": "Rimuovi",
+   "removeServer": "Rimuovi {{server}}",
+   "search": "Cerca server associati",
+   "tooltip": "I bot e gli agenti su questi server possono interpellare {{name}} senza chiedertelo ogni volta."
   },
   "palette": {
    "chip": "Bot",
@@ -19908,7 +20167,6 @@
    "youAndOthers_other": "Tu e altre {{count}} persone"
   },
   "setup": {
-   "copyHowToAsk": "Copia {{text}}",
    "for": "per {{name}}",
    "forOnHost": "per {{name}} su {{host}}"
   },
@@ -20008,15 +20266,111 @@
   "tabs": {
    "homeBanner": "Apri la pagina di {{name}}",
    "homeDetail": "Home: la chat principale del bot. La sua memoria, le automazioni e le richieste degli altri arrivano qui.",
+   "homeTitle": "Home",
    "sideDetail": "Chat laterale: un argomento separato con questo bot."
+  },
+  "templateSkills": {
+   "bugReproduction": "bug-reproduction",
+   "ciFailureTriage": "ci-failure-triage",
+   "dependencyUpgrade": "dependency-upgrade",
+   "feedbackThemes": "feedback-themes",
+   "incidentTimeline": "incident-timeline",
+   "issueTriage": "issue-triage",
+   "lines": {
+    "bug-reproduction": "Annota i passaggi esatti che mostrano il bug prima di cercarne la causa.",
+    "ci-failure-triage": "Distingui un controllo instabile da un fallimento reale o da un’infrastruttura guasta e trova il commit che lo ha causato.",
+    "dependency-upgrade": "Aggiorna un gruppo alla volta, leggi il changelog, esegui i test, una pull request ciascuno.",
+    "feedback-themes": "Raggruppa i feedback in temi con conteggi e brevi citazioni; collega le issue esistenti.",
+    "incident-timeline": "Tieni una cronologia con data e ora, poi prepara una relazione senza attribuzione di colpe.",
+    "issue-triage": "Etichetta, trova i duplicati, chiedi i dettagli mancanti per riprodurre il problema in un solo commento.",
+    "pr-review-checklist": "Leggi un diff cercando cambiamenti di comportamento, test mancanti e modifiche rischiose; cita ogni risultato.",
+    "release-notes-style": "Note per gli utenti: novità, correzioni, modifiche; ometti refactoring e nomi in codice.",
+    "release-readiness": "Cosa blocca una release e come elencarlo: controlli, revisioni, blocchi aperti.",
+    "security-checklist": "Segreti, injection, controlli di autenticazione e impostazioni predefinite non sicure da cercare in una modifica.",
+    "spec-format": "Una specifica di una pagina: problema, decisione, ambito, domande aperte.",
+    "status-brief": "Cambiato, bloccato, richiede una decisione: un resoconto in meno di dieci righe.",
+    "workspace-hygiene": "Quando uno spazio di lavoro è finito o abbandonato e cosa controllare prima di rimuoverlo."
+   },
+   "nameWithFolder": "{{name}} ({{folder}})",
+   "prReviewChecklist": "pr-review-checklist",
+   "releaseNotesStyle": "release-notes-style",
+   "releaseReadiness": "release-readiness",
+   "securityChecklist": "security-checklist",
+   "specFormat": "spec-format",
+   "statusBrief": "status-brief",
+   "workspaceHygiene": "workspace-hygiene"
   },
   "templates": {
    "aboutTemplate": "Informazioni su {{name}}",
    "allCategories": "Tutte",
    "allTemplates": "Tutti i template",
+   "backlog-cleanup": {
+    "does": "Elenca le issue obsolete, i probabili duplicati e le issue senza assegnatario.",
+    "example1": "14 issue ferme da agosto.",
+    "example2": "ORC-511 e ORC-688 sembrano lo stesso bug.",
+    "firstChat": "Elenca le issue ferme da 60 giorni, i probabili duplicati e le issue senza assegnatario, per un team che scegli.",
+    "line": "Trova issue obsolete, duplicate e senza assegnatario.",
+    "name": "Pulizia del backlog",
+    "reports": "Qui, il primo di ogni mese",
+    "schedules": {
+     "monthly-list": {
+      "what": "Elenco di pulizia",
+      "when": "Il primo di ogni mese alle 9:00"
+     }
+    },
+    "watches": "Issue di Linear del team che scegli"
+   },
    "blank": "Bot vuoto",
    "blankFor": "Bot vuoto per “{{query}}”",
+   "briefing": {
+    "does": "Scrive cosa è cambiato, cosa è bloccato e cosa richiede una decisione.",
+    "example1": "Mobile v2: 6 issue chiuse, 2 in attesa del design.",
+    "example2": "Serve una decisione: ORC-902, testo del permesso push.",
+    "firstChat": "Scrive cosa è cambiato, cosa è bloccato e cosa richiede una decisione per i progetti che scegli.",
+    "line": "Un resoconto settimanale sui progetti che scegli.",
+    "name": "Resoconto dei progetti",
+    "reports": "Qui, il venerdì alle 15:00",
+    "schedules": {
+     "weekly-brief": {
+      "what": "Il resoconto",
+      "when": "Il venerdì alle 15:00"
+     }
+    },
+    "watches": "Progetti Linear e repository GitHub"
+   },
    "browse": "Sfoglia modelli",
+   "bug-intake": {
+    "does": "Prepara una issue di Linear con i passaggi per riprodurre il bug per ogni segnalazione; la apre una volta approvata.",
+    "events": {
+     "bug-posted": {
+      "action": "Prepara una issue",
+      "trigger": "Quando qualcuno scrive nel tuo canale dei bug"
+     }
+    },
+    "example1": "Bozza: «Il terminale si blocca dopo la sospensione su macOS 27», con i passaggi dal thread.",
+    "example2": "Possibile duplicato di ORC-702.",
+    "firstChat": "Legge il canale che scegli e prepara una issue per ogni nuova segnalazione di bug. Le apre solo dopo la tua approvazione.",
+    "line": "Trasforma le segnalazioni di bug su Slack in issue tracciate con i passaggi per riprodurle.",
+    "name": "Raccolta delle segnalazioni di bug",
+    "reports": "Qui, quando viene segnalato un bug",
+    "watches": "Il canale Slack dove vengono segnalati i bug"
+   },
+   "bug-investigation": {
+    "does": "Riproduce il bug in un nuovo spazio di lavoro, trova dove ha origine e propone una correzione.",
+    "events": {
+     "linear-assigned": {
+      "action": "Indaga",
+      "trigger": "Quando ti viene assegnata una issue di Linear"
+     }
+    },
+    "example1": "Riprodotto ORC-640 su Windows: l’incolla perde l’ultima riga se non termina con un a capo.",
+    "example2": "Causa: il marcatore di fine incolla parte prima dell’ultimo blocco. Avvio una correzione?",
+    "firstChat": "Dagli una segnalazione di bug o il link a una issue. Avvia un agente in un nuovo spazio di lavoro che annota come riprodurlo, poi riferisce la causa. Scrive una correzione solo dopo il tuo consenso.",
+    "line": "Riproduce un bug segnalato e trova dove ha origine.",
+    "name": "Indagine sui bug",
+    "reports": "Qui, quando ha una riproduzione e una causa",
+    "watches": "Segnalazioni di bug che gli passi e issue di Linear assegnate a te"
+   },
    "category": {
     "coding": "Programmazione",
     "ops": "Operazioni",
@@ -20025,31 +20379,358 @@
     "releases": "Release e CI",
     "support": "Supporto e smistamento"
    },
+   "ci-failures": {
+    "does": "Distingue i controlli instabili dai fallimenti veri, spiega ogni fallimento e tiene un elenco dei controlli instabili.",
+    "events": {
+     "check-failed": {
+      "action": "Di' se è instabile o reale",
+      "trigger": "Quando un controllo fallisce"
+     }
+    },
+    "example1": "#4130 typecheck: un export rinominato, due punti di chiamata dimenticati. La correzione è un solo commit.",
+    "example2": "Il più instabile della settimana: test sul ridimensionamento del terminale, 4 esecuzioni su 30.",
+    "firstChat": "Legge le esecuzioni dei controlli delle ultime due settimane ed elenca quelle instabili, poi spiega ogni controllo fallito sulle tue pull request aperte. Avvia una correzione solo dopo il tuo consenso.",
+    "line": "Spiega i controlli falliti e tiene un elenco di quelli instabili.",
+    "name": "Errori della CI",
+    "needsSetup": "GitHub non può ancora filtrare i fallimenti per branch, quindi il bot guarda ogni fallimento del repository e salta quelli che non contano. Ognuno costa un turno.",
+    "reports": "Qui, il lunedì alle 9:00 e quando un controllo fallisce",
+    "schedules": {
+     "flaky-list": {
+      "what": "Controlli instabili",
+      "when": "Il lunedì alle 9:00"
+     }
+    },
+    "watches": "Esecuzioni dei controlli nei repository che scegli"
+   },
    "clearSearch": "Cancella ricerca",
    "close": "Chiudi",
    "closeTooltip": "Chiudi · Esc",
    "comesWith": "Include",
    "comesWithHelp": "Informazioni su pianificazioni e configurazione del template",
    "comesWithNote": "Le pianificazioni partono disattivate. Automazioni e connettori vengono configurati nella sua prima chat, dopo che avrai scelto il repository o il canale.",
+   "dependency-updates": {
+    "does": "Elenca avvisi e pacchetti obsoleti, i più urgenti per primi; una volta concordato, aggiorna un gruppo per pull request.",
+    "example1": "1 avviso: http-client 6.19 ha una correzione di gravità alta nella 6.21.",
+    "example2": "4 aggiornamenti minori possono stare in una sola pull request.",
+    "firstChat": "Elenca i pacchetti obsoleti e vulnerabili in un repository che scegli, i più urgenti per primi. Dopo il tuo consenso, un agente apre una pull request per gruppo.",
+    "line": "Controlla i pacchetti obsoleti e vulnerabili e propone gli aggiornamenti.",
+    "name": "Aggiornamenti delle dipendenze",
+    "reports": "Qui, il lunedì alle 9:00",
+    "schedules": {
+     "weekly-check": {
+      "what": "Nuovi avvisi e versioni principali",
+      "when": "Il lunedì alle 9:00"
+     }
+    },
+    "watches": "Pacchetti nei repository che scegli"
+   },
+   "deploy-watch": {
+    "does": "Riassume ogni deploy a partire dalle pull request rilasciate e segnala quelli falliti.",
+    "events": {
+     "deploy-called": {
+      "action": "Riassumi il deploy",
+      "trigger": "Quando il tuo strumento di deploy chiama"
+     }
+    },
+    "example1": "Deploy in produzione alle 14:02: 5 pull request, inclusa la correzione dei tentativi del relay.",
+    "example2": "Deploy in staging fallito alla migrazione: la colonna esiste già.",
+    "firstChat": "Ti dà un indirizzo di automazione da far chiamare al tuo strumento di deploy, poi riassume ogni deploy a partire dalle pull request rilasciate.",
+    "line": "Pubblica cosa è cambiato in ogni deploy e segnala quelli falliti.",
+    "name": "Sorveglianza dei deploy",
+    "needsSetup": "Nessun connettore per lo strumento di deploy: aggiungi a mano l’indirizzo dell’automazione al tuo strumento di deploy.",
+    "reports": "Qui, dopo ogni deploy",
+    "watches": "Chiamate dal tuo strumento di deploy"
+   },
+   "docs-upkeep": {
+    "does": "Elenca le pagine della documentazione non più allineate a ciò che è stato unito, con la riga ora sbagliata.",
+    "example1": "docs/remote.md dice ancora che SSH richiede un riavvio; #4108 lo ha eliminato.",
+    "example2": "Un’altra pagina cita il vecchio nome dell’impostazione.",
+    "firstChat": "Legge le pull request unite la settimana scorsa ed elenca le pagine della documentazione che ora dicono qualcosa di sbagliato.",
+    "line": "Segnala la documentazione non più allineata al codice unito.",
+    "name": "Manutenzione della documentazione",
+    "reports": "Qui, il mercoledì alle 10:00",
+    "schedules": {
+     "weekly-docs": {
+      "what": "Documentazione da aggiornare",
+      "when": "Il mercoledì alle 10:00"
+     }
+    },
+    "watches": "Pull request unite e documentazione nei repository che scegli"
+   },
+   "email-digest": {
+    "does": "Elenca le email che richiedono una tua risposta, dalla più recente. Non invia mai email.",
+    "example1": "2 richiedono una risposta: la data della revisione di sicurezza e una domanda su una fattura.",
+    "example2": "14 newsletter saltate.",
+    "firstChat": "Legge la posta in arrivo di oggi ed elenca le email che richiedono una tua risposta, dalla più recente. Non invia mai email.",
+    "line": "Due volte al giorno, le email che richiedono una tua risposta.",
+    "name": "Riepilogo delle email",
+    "reports": "Qui, nei giorni feriali alle 9:00 e alle 14:00",
+    "schedules": {
+     "afternoon": {
+      "what": "Email che richiedono te",
+      "when": "Nei giorni feriali alle 14:00"
+     },
+     "morning": {
+      "what": "Email che richiedono te",
+      "when": "Nei giorni feriali alle 9:00"
+     }
+    },
+    "watches": "La tua posta in arrivo"
+   },
+   "feedback": {
+    "does": "Raggruppa i feedback in temi con citazioni e conteggi e collega le issue di Linear esistenti.",
+    "example1": "Tema principale: incollare nel terminale di Windows, 7 persone, collegato a ORC-640.",
+    "example2": "Novità della settimana: 3 persone hanno chiesto di esportare un bot.",
+    "firstChat": "Raggruppa in temi, con conteggi e citazioni, l’ultimo mese di feedback nei canali che scegli.",
+    "line": "Trasforma i feedback in un elenco settimanale di temi.",
+    "name": "Riepilogo dei feedback",
+    "reports": "Qui, il lunedì alle 9:00",
+    "schedules": {
+     "weekly-themes": {
+      "what": "Temi della settimana",
+      "when": "Il lunedì alle 9:00"
+     }
+    },
+    "watches": "Canali Slack dei feedback"
+   },
    "filterCategory": "Filtra per categoria",
    "firstChat": "Cosa fa per prima cosa",
+   "followup": {
+    "does": "Trova le domande rivolte a te senza risposta e le cose che hai detto che avresti fatto.",
+    "example1": "Hai detto a un collega «Controllo domani» in #design, 2 giorni fa.",
+    "example2": "ORC-881 ha una domanda per te da ieri.",
+    "firstChat": "Trova le domande rivolte a te senza risposta e le cose che hai detto che avresti fatto, nei thread di Slack e nei commenti alle issue.",
+    "line": "Ti ricorda le risposte che devi ancora dare.",
+    "name": "Risposte che devi",
+    "reports": "Qui, ogni giorno alle 16:00",
+    "schedules": {
+     "daily-owed": {
+      "what": "Ciò che devi ancora",
+      "when": "Ogni giorno alle 16:00"
+     }
+    },
+    "watches": "Thread di Slack e commenti di Linear"
+   },
    "fromLink": "Da un link",
    "inItsChat": "nella sua chat",
+   "incident-notes": {
+    "does": "Tiene una cronologia con data e ora, poi prepara una relazione senza attribuzione di colpe.",
+    "events": {
+     "incident-posted": {
+      "action": "Aggiungilo alla cronologia",
+      "trigger": "Quando qualcuno scrive in un canale degli incidenti"
+     }
+    },
+    "example1": "14:02 allarme scattato; 14:09 rollback avviato; 14:21 errori tornati alla normalità.",
+    "example2": "Bozza della relazione pronta.",
+    "firstChat": "Segue il canale degli incidenti che scegli e i suoi thread, tiene una cronologia con data e ora e prepara una relazione senza attribuzione di colpe quando l’incidente è concluso.",
+    "line": "Tiene una cronologia in un canale degli incidenti e prepara la relazione.",
+    "name": "Note sugli incidenti",
+    "reports": "Qui, durante e dopo un incidente",
+    "watches": "Il canale degli incidenti che scegli e i suoi thread"
+   },
+   "issue-triage": {
+    "does": "Propone etichette e duplicati ed elenca i dettagli mancanti per ogni nuova issue.",
+    "events": {
+     "issue-opened": {
+      "action": "Proponi etichette e duplicati",
+      "trigger": "Quando viene aperta una issue"
+     }
+    },
+    "example1": "#2210: bug, windows, duplicato di #2188.",
+    "example2": "#2214 non ha versione né passaggi. Li chiedo?",
+    "firstChat": "Esamina le nuove issue dell’ultima settimana in un repository che scegli e propone qui etichette e duplicati.",
+    "line": "Etichetta le nuove issue, trova i duplicati e chiede i dettagli mancanti.",
+    "name": "Smistamento delle issue di GitHub",
+    "reports": "Qui, quando viene aperta una issue",
+    "watches": "Nuove issue nei repository che scegli"
+   },
    "keepSkill": "Aggiungi la skill {{skill}}",
+   "meeting-prep": {
+    "does": "Prima di ogni riunione, elenca le issue, le pull request e i documenti di cui si parla.",
+    "events": {
+     "meeting-soon": {
+      "action": "Nota di preparazione",
+      "trigger": "15 minuti prima di una riunione"
+     }
+    },
+    "example1": "Sync mobile alle 11: ORC-902 richiede una decisione; #4130 aspetta te.",
+    "example2": "Documento: «Testo del permesso push».",
+    "firstChat": "Guarda il calendario di oggi e scrive una breve nota di preparazione per ogni riunione.",
+    "line": "Prima di ogni riunione, le issue, le pull request e i documenti di cui si parla.",
+    "name": "Preparazione delle riunioni",
+    "reports": "Qui, prima di ogni riunione",
+    "watches": "Il tuo calendario"
+   },
    "needsSetup": "Richiede configurazione",
    "noMatch": "Nessun template corrisponde a “{{query}}”",
    "noMatchLine": "Avvia un bot vuoto e digli a cosa serve nella sua prima chat.",
    "official": "Template ufficiale di Orca",
+   "oncall-handoff": {
+    "does": "Riassume gli allarmi e gli incidenti della settimana ed elenca i follow-up aperti.",
+    "example1": "12 allarmi, 2 incidenti. L’allarme disco su cell-3 è scattato 5 volte.",
+    "example2": "3 follow-up ancora aperti.",
+    "firstChat": "Legge il tuo canale degli allarmi e le issue sugli incidenti dell’ultima settimana e scrive il passaggio di consegne.",
+    "line": "Un riepilogo settimanale di allarmi, incidenti e azioni di follow-up aperte.",
+    "name": "Passaggio di consegne della reperibilità",
+    "needsSetup": "Nessun connettore per lo strumento di paging: legge gli allarmi solo dove sono pubblicati su Slack.",
+    "reports": "Qui, il venerdì alle 16:00",
+    "schedules": {
+     "weekly-handoff": {
+      "what": "Passaggio di consegne",
+      "when": "Il venerdì alle 16:00"
+     }
+    },
+    "watches": "Il tuo canale degli allarmi e le issue sugli incidenti"
+   },
    "paletteLine": "Modello di bot",
+   "pr-review": {
+    "does": "Rivede ciascuna ed elenca le modifiche rischiose e i test mancanti, con file e riga.",
+    "events": {
+     "review-requested": {
+      "action": "Rivedila e pubblica qui",
+      "trigger": "Quando ti viene chiesto di rivedere una pull request"
+     }
+    },
+    "example1": "#4121: il contatore dei tentativi non viene mai azzerato, quindi un secondo guasto interrompe i tentativi.",
+    "example2": "Nessun test copre il nuovo percorso del timeout.",
+    "firstChat": "Chiede quali repository coprire, poi rivede le pull request aperte in attesa della tua revisione e pubblica qui i risultati, con file e riga. Non commenta su GitHub finché non glielo permetti.",
+    "line": "Rivede le pull request che ti vengono assegnate ed elenca le modifiche rischiose.",
+    "name": "Revisione delle pull request",
+    "reports": "Qui, quando viene richiesta una revisione",
+    "watches": "Pull request in attesa della tua revisione, nei repository che scegli"
+   },
    "publisher": "di Orca",
+   "release-notes": {
+    "does": "Prepara la bozza delle note di rilascio per gli utenti in tre gruppi: novità, correzioni, modifiche.",
+    "example1": "Bozza per la 1.5: 4 novità, 9 correzioni, 2 modifiche.",
+    "example2": "Modifica più grande: i bot possono condividere le skill.",
+    "firstChat": "Trova l’ultimo tag di release e prepara le note in tre gruppi: novità, correzioni, modifiche. Le modifichi qui.",
+    "line": "Prepara la bozza delle note della prossima release dalle pull request unite.",
+    "name": "Note di rilascio",
+    "reports": "Qui, quando lo chiedi",
+    "watches": "Pull request unite dall’ultima release"
+   },
+   "release": {
+    "does": "Mantiene un breve elenco di prontezza: controlli falliti, pull request in attesa di revisione, blocchi aperti.",
+    "example1": "La 1.5 è bloccata da un controllo fallito: typecheck su #4121.",
+    "example2": "Due pull request attendono ancora una revisione: #4108, #4130.",
+    "firstChat": "Mantiene un breve elenco di prontezza: controlli falliti, pull request in attesa di revisione, blocchi aperti.",
+    "line": "Tiene traccia di ciò che blocca la prossima release.",
+    "name": "Prontezza della release",
+    "reports": "Qui, la mattina dei giorni feriali",
+    "schedules": {
+     "readiness-list": {
+      "what": "Elenco di prontezza",
+      "when": "Nei giorni feriali alle 9:00"
+     }
+    },
+    "watches": "Pull request, controlli e spazi di lavoro"
+   },
    "search": "Cerca template",
+   "security-check": {
+    "does": "Le controlla per segreti esposti, injection, autenticazione mancante e impostazioni predefinite non sicure.",
+    "events": {
+     "pr-merged": {
+      "action": "Controllala",
+      "trigger": "Quando una pull request viene unita"
+     }
+    },
+    "example1": "#4133 registra negli log tutti gli header della richiesta, compreso il token di autenticazione.",
+    "example2": "Nient’altro questa settimana.",
+    "firstChat": "Rivede le pull request unite la settimana scorsa in un repository che scegli ed elenca tutto ciò che merita un secondo sguardo, con file e riga.",
+    "line": "Esamina le modifiche unite alla ricerca di segreti esposti e codice rischioso.",
+    "name": "Controllo di sicurezza",
+    "reports": "Qui, il lunedì alle 9:00 e quando una pull request viene unita",
+    "schedules": {
+     "weekly-review": {
+      "what": "Le modifiche unite della settimana",
+      "when": "Il lunedì alle 9:00"
+     }
+    },
+    "watches": "Pull request unite nei repository che scegli"
+   },
+   "spec-drafts": {
+    "does": "Prepara una specifica di una pagina: problema, decisione, ambito, domande aperte.",
+    "example1": "Bozza: «Condivisione dei bot v2». 3 decisioni, 2 domande aperte.",
+    "example2": "Salvata su Drive come documento.",
+    "firstChat": "Dagli un thread di Slack o un documento. Prepara una specifica di una pagina e chiede di tutto ciò che resta aperto.",
+    "line": "Trasforma una discussione in una breve specifica da condividere.",
+    "name": "Stesura delle specifiche",
+    "reports": "Qui, quando lo chiedi",
+    "watches": "Thread di Slack e documenti che gli passi"
+   },
+   "standup": {
+    "does": "Scrive le note di ieri e il piano di oggi.",
+    "example1": "Ieri: unita #4121, tentativi del relay. Gli agenti hanno finito 2 spazi di lavoro.",
+    "example2": "Oggi: ORC-702, revisione di #4130.",
+    "firstChat": "Scrive le note di ieri a partire dai tuoi spazi di lavoro, dalle pull request unite e dalle issue spostate. Le copi dove le legge il tuo team.",
+    "line": "Cosa hanno fatto ieri tu e i tuoi agenti, e cosa c’è dopo.",
+    "name": "Note dello standup giornaliero",
+    "reports": "Qui, nei giorni feriali alle 9:00",
+    "schedules": {
+     "daily-notes": {
+      "what": "Note dello standup",
+      "when": "Nei giorni feriali alle 9:00"
+     }
+    },
+    "watches": "I tuoi spazi di lavoro, le pull request e le issue"
+   },
    "stateFirstChat": "Prima chat",
    "stateNotConnected": "Non connesso",
    "stateOff": "Disattivato",
+   "support": {
+    "does": "Elenca le domande senza risposta con i link e indica quali hanno già una issue di Linear.",
+    "example1": "3 nuove domande in #help dalle 11:00. La più vecchia: il remoto SSH continua a disconnettersi, 2 ore.",
+    "example2": "«Posso esportare un bot?» ha già SUP-212.",
+    "firstChat": "Elenca le domande senza risposta nei canali Slack che scegli, con i link, e indica quali hanno già una issue.",
+    "line": "Tiene un elenco delle domande a cui nessuno ha risposto.",
+    "name": "Smistamento del supporto",
+    "reports": "Qui, ogni 2 ore nei giorni feriali",
+    "schedules": {
+     "unanswered": {
+      "what": "Domande senza risposta",
+      "when": "Nei giorni feriali, ogni 2 ore dalle 9:00 alle 17:00"
+     }
+    },
+    "watches": "Canali Slack che scegli"
+   },
    "title": "Template di bot",
+   "unreviewed-work": {
+    "does": "Elenca gli spazi di lavoro il cui agente ha finito con modifiche che nessuno ha rivisto o per cui non è stata aperta una pull request.",
+    "example1": "mobile-pairing è finito ieri con un diff di 340 righe, senza pull request.",
+    "example2": "Altri 2 finiti questa settimana.",
+    "firstChat": "Elenca gli spazi di lavoro il cui agente ha finito con modifiche che non hai rivisto né trasformato in una pull request. Orca ti avvisa già quando un agente è in attesa di te; questo copre ciò che è finito.",
+    "line": "Un elenco giornaliero del lavoro concluso dagli agenti che nessuno ha ancora guardato.",
+    "name": "Lavoro degli agenti non rivisto",
+    "reports": "Qui, nei giorni feriali alle 9:00",
+    "schedules": {
+     "daily-list": {
+      "what": "Lavoro finito in attesa di revisione",
+      "when": "Nei giorni feriali alle 9:00"
+     }
+    },
+    "watches": "I tuoi spazi di lavoro di Orca"
+   },
    "use": "Usa",
    "useNamed": "Usa {{name}}",
-   "useTemplate": "Usa template…"
+   "useTemplate": "Usa template…",
+   "workspace-cleanup": {
+    "does": "Elenca gli spazi di lavoro finiti o abbandonati, con le modifiche non committate; rimuove solo quelli che scegli.",
+    "example1": "6 spazi di lavoro sono finiti: le loro pull request sono state unite questa settimana.",
+    "example2": "2 cartelle non cambiano dal 20 ott.",
+    "firstChat": "Elenca gli spazi di lavoro la cui pull request è stata unita o che non cambiano da due settimane, con eventuali modifiche non committate. Rimuove solo quelli che scegli.",
+    "line": "Trova gli spazi di lavoro finiti o abbandonati e propone di rimuoverli.",
+    "name": "Pulizia degli spazi di lavoro",
+    "reports": "Qui, il venerdì alle 16:00",
+    "schedules": {
+     "weekly-list": {
+      "what": "Spazi di lavoro pronti da rimuovere",
+      "when": "Il venerdì alle 16:00"
+     }
+    },
+    "watches": "I tuoi spazi di lavoro di Orca e le loro pull request"
+   }
   },
   "toolApp": {
    "address": "Indirizzo",
@@ -20079,6 +20760,30 @@
    "uses": "Usa",
    "wontStart": "Non si avvia"
   },
+  "tools": {
+   "input": {
+    "invalid": "Inserisci un nome server e un URL o un eseguibile validi.",
+    "namesRepeat": "Ogni nome di header o di variabile d’ambiente deve essere univoco.",
+    "rowInvalid": "Inserisci un nome e un valore validi per ogni riga, oppure rimuovi la riga."
+   },
+   "paste": {
+    "badCommand": "Usa un solo comando di avvio con virgolette bilanciate, oppure inserisci i dettagli a mano. Le espressioni shell non sono supportate.",
+    "badUrl": "Usa un URL HTTP o HTTPS senza credenziali incorporate.",
+    "notConfig": "Incolla l’URL di un server o un comando di avvio, oppure inserisci la configurazione in Modifica dettagli."
+   },
+   "signIn": {
+    "notThisSignIn": "Quell’indirizzo non proviene da questo accesso. Incolla l’indirizzo su cui sei arrivato."
+   },
+   "signInFailure": {
+    "couldNotSignIn": "Impossibile accedere. Riprova.",
+    "denied": "L’accesso non è stato consentito.",
+    "desktopOnly": "Accedi da Orca su {{host}}.",
+    "expired": "L’accesso è scaduto. Riprova.",
+    "noTool": "Questo bot non ha più quello strumento.",
+    "unavailable": "Impossibile raggiungere questa app. Controlla l’indirizzo e riprova.",
+    "unsupported": "Questa app non è ancora supportata."
+   }
+  },
   "upNext": {
    "dismiss": "Chiudi",
    "hostOffline": "Il computer di {{bot}} è offline",
@@ -20098,12 +20803,12 @@
   "upcoming": {
    "dueNow": "Da eseguire ora",
    "empty": "Chiedi a {{name}} in chat di eseguire qualcosa in modo pianificato o quando succede qualcosa.",
-   "every2h": "ogni 2 ore",
-   "every4h": "ogni 4 ore",
+   "every2hWindow": "Dalle {{from}} alle {{to}}, ogni 2 ore",
+   "every4hWindow": "Dalle {{from}} alle {{to}}, ogni 4 ore",
    "lastNeededSignIn": "La sua ultima esecuzione si è fermata per un accesso",
    "lookAroundSettings": "Impostazioni di Dai un’occhiata",
    "lookFirst": "Dopo la tua prima chat · poi {{every}}",
-   "mornings": "ogni mattina",
+   "morningsAt": "ogni mattina alle {{time}}",
    "needsSignIn": "Richiede l’accesso",
    "runsEvery": "Eseguita {{every}}",
    "stopped": "Interrotta",
@@ -20113,7 +20818,8 @@
    "tidyWeekAfter": "Una volta a settimana dopo le {{from}}, o appena questo computer è attivo",
    "today": "Oggi alle {{time}}",
    "tomorrow": "Domani alle {{time}}",
-   "twiceDaily": "due volte al giorno"
+   "twiceDailyAt": "due volte al giorno, alle {{first}} e alle {{second}}",
+   "weekdays": "nei giorni feriali, {{schedule}}"
   },
   "usageLimit": {
    "continuesAt": "Riprende alle {{time}}",
@@ -20176,6 +20882,7 @@
     "pasted": "Firma di {{sender}}, con il tuo segreto di {{sender}}"
    },
    "checksLabel": "Controlli",
+   "copied": "Copiato",
    "copiedKey": "Chiave copiata",
    "copiedNoClear": "Svuota gli appunti quando hai finito; questo browser non può garantire di svuotarli per te.",
    "copiedUrl": "URL copiato",
@@ -20387,10 +21094,12 @@
     "noCookies": "Nessun cookie trovato in {{browser}}.",
     "noValidCookies": "Nessun cookie valido trovato in {{browser}}.",
     "notAuthorized": "Non autorizzato",
+    "pageChanged": "Questa pagina è stata chiusa o ha cambiato profilo durante l’importazione. Riprova.",
     "profileNotFound": "Profilo di sessione non trovato.",
     "readFailed": "Impossibile leggere i cookie di {{browser}}.",
     "safariFullDiskAccess": "macOS ha negato l’accesso ai cookie di Safari. Concedi a Orca l’accesso completo al disco in Impostazioni di Sistema → Privacy e sicurezza → Accesso completo al disco.",
-    "serverRepaired": "Questo server è stato associato di nuovo durante l’importazione. Riprova."
+    "serverRepaired": "Questo server è stato associato di nuovo durante l’importazione. Riprova.",
+    "sshHostDisconnected": "Questa pagina non è più connessa tramite il suo host SSH. Riconnettiti e riprova."
    },
    "notice": {
     "failed": "Importazione dei cookie non riuscita: {{reason}}",
@@ -20402,6 +21111,13 @@
     "imported_many": "Importati {{count}} cookie per {{domains}}. Ricarica la pagina per usarli.",
     "imported_one": "Importato {{count}} cookie per {{domains}}. Ricarica la pagina per usarlo.",
     "imported_other": "Importati {{count}} cookie per {{domains}}. Ricarica la pagina per usarli."
+   },
+   "sshPage": {
+    "destination": "Importa nel browser per {{host}}.",
+    "googleCookiesSkipped": "I cookie di Google non sono stati importati. Apri una pagina che naviga tramite {{host}}, poi accedi a Google.",
+    "hostAgents": "Gli agenti su {{host}} possono usare questi accessi, ma non possono leggere i cookie.",
+    "label": "Browser su questo dispositivo",
+    "stored": "Salvato nel browser per {{host}}."
    }
   },
   "extensions": {
@@ -20523,6 +21239,11 @@
   "request": {
    "pairedServerWorkspace": "Questo spazio di lavoro è in esecuzione su un server abbinato. Usa le schede del browser di quel server."
   },
+  "serverPage": {
+   "download": {
+    "started": "Download in {{path}} su {{host}}"
+   }
+  },
   "sshEgress": {
    "localDetail": "Le pagine vengono caricate da questa macchina e dalla sua rete.",
    "localTooltip": "Navigazione da questo dispositivo, non da {{value0}}",
@@ -20573,6 +21294,19 @@
  "browserTab": {
   "agentDriving": "Un agente sta usando questa pagina",
   "controlledByHost": "Controllato da {{host}}"
+ },
+ "chats": {
+  "delete": {
+   "action": "Elimina",
+   "descriptionHost": "Viene eliminata definitivamente da {{host}}. L’operazione non può essere annullata.",
+   "failed": "Impossibile eliminare la chat",
+   "groupRoom": "La chat di una stanza di gruppo non può essere eliminata",
+   "home": "La Home Chat di un agente gestito non può essere eliminata",
+   "title": "Eliminare questa chat?",
+   "undone": "L’operazione non può essere annullata.",
+   "updateHost": "Aggiorna {{host}} per eliminare le chat",
+   "workerOwed": "Un’orchestrazione è ancora in attesa di questa chat"
+  }
  },
  "checksPanel": {
   "unlinked": {
@@ -20904,6 +21638,7 @@
    "unpackingDetail": "Decompressione del runtime",
    "unpackingTitle": "Decompressione di {{agent}}",
    "update": "Aggiorna",
+   "updateTo": "Aggiorna alla {{version}}",
    "verifying": "Verifica del runtime scaricato."
   },
   "markdown-callout": {
@@ -20917,6 +21652,13 @@
    "addSelectionToChat": "Aggiungi alla chat",
    "agentMessage": {
     "goToAgent": "Vai all’agente",
+    "kind": {
+     "followedUp": "Follow-up",
+     "handedOff": "Passato",
+     "reopened": "Riaperto",
+     "started": "Avviato",
+     "task": "Attività"
+    },
     "open": "Apri {{name}}",
     "row": {
      "followedUp": "Ha inviato un seguito a",
@@ -20979,36 +21721,18 @@
     "yourAgyVersion": "Il tuo agy · v{{version}}"
    },
    "approval": {
-    "answerFailed": "{{name}}: {{detail}}",
-    "answerNotApplied": "{{name}}: la risposta non ha raggiunto questa richiesta",
-    "answerWorkerEnded": "{{name}} è terminato, quindi questa richiesta è chiusa",
-    "countdown": "Claude nega da solo tra {{time}} se nessuno risponde.",
-    "reasonSentAsMessage": "Motivo, inviato come messaggio",
     "record": {
-     "allowedInChat": "<tool>{{tool}}</tool> per <task>{{task}}</task> consentito nella sua chat",
-     "allowedInTerminal": "<tool>{{tool}}</tool> per <task>{{task}}</task> consentito nel suo terminale",
      "allowedUnnamed": "Consentito <tool>{{tool}}</tool>",
-     "autoDenied": "<tool>{{tool}}</tool> per <task>{{task}}</task> negato automaticamente dopo 2:00",
      "cancelled": "Richiesta per <tool>{{tool}}</tool> annullata",
-     "closedUnnamed": "<tool>{{tool}}</tool> per <task>{{task}}</task> chiuso senza una risposta registrata",
-     "coordinatorAllowed": "Il coordinatore ha consentito <tool>{{tool}}</tool> per <task>{{task}}</task>",
      "coordinatorAllowedHere": "Il coordinatore ha consentito <tool>{{tool}}</tool>",
-     "coordinatorDenied": "Il coordinatore ha negato <tool>{{tool}}</tool> per <task>{{task}}</task>",
      "coordinatorDeniedHere": "Il coordinatore ha negato <tool>{{tool}}</tool>",
-     "coordinatorReason": "Motivo del coordinatore",
-     "deniedInChat": "<tool>{{tool}}</tool> per <task>{{task}}</task> negato nella sua chat",
-     "deniedInTerminal": "<tool>{{tool}}</tool> per <task>{{task}}</task> negato nel suo terminale",
      "deniedUnnamed": "Negato <tool>{{tool}}</tool>",
      "showLess": "Mostra meno",
      "showMore": "Mostra altro",
-     "waitsInTerminal": "<tool>{{tool}}</tool> per <task>{{task}}</task> è in attesa nel suo terminale",
-     "workerEnded": "<tool>{{tool}}</tool> per <task>{{task}}</task> chiuso: il worker è terminato",
      "youAllowed": "Hai consentito <tool>{{tool}}</tool>",
-     "youAllowedFor": "Hai consentito <tool>{{tool}}</tool> per <task>{{task}}</task>",
      "youAllowedForSession": "Hai consentito <tool>{{tool}}</tool> per questa sessione",
      "youAnswered": "Hai risposto a <tool>{{tool}}</tool>: {{answer}}",
-     "youDenied": "Hai negato <tool>{{tool}}</tool>",
-     "youDeniedFor": "Hai negato <tool>{{tool}}</tool> per <task>{{task}}</task>"
+     "youDenied": "Hai negato <tool>{{tool}}</tool>"
     }
    },
    "ask": {
@@ -21128,6 +21852,11 @@
     "again": "{{name}} ha ricominciato la configurazione",
     "unnamed": "Bot creato"
    },
+   "botRequest": {
+    "asked": "Chiesto a",
+    "handedTo": "Passato a",
+    "notSentTo": "Non inviato a"
+   },
    "cardKindHidden": {
     "description": "Puoi cambiarlo in qualsiasi momento in",
     "failed": "Impossibile salvare. Puoi disattivarlo in Impostazioni > Chat UI > Attività dei turni.",
@@ -21142,6 +21871,13 @@
    },
    "claudeSignIn": {
     "signingIn": "Accesso in corso…"
+   },
+   "clientAsk": {
+    "declined": "Rifiutato",
+    "notConnected": "Non era connesso",
+    "pairedComputer": "Computer associato",
+    "waitingForYou": "In attesa di te",
+    "waitingOn": "In attesa di approvazione su {{computer}}"
    },
    "commandMarker": {
     "ran": "Eseguito {{command}}"
@@ -21306,6 +22042,7 @@
     "worktree": "Worktree"
    },
    "connectorAsker": {
+    "anApp": "Un’app",
     "directMessage": "DM {{source}}",
     "earlierMessages": "{{count}} messaggi precedenti nel thread",
     "earlierMessages_one": "{{count}} messaggio precedente nel thread",
@@ -21354,6 +22091,9 @@
    },
    "creationChatNotOpened": "Il worktree è pronto, ma non è stato possibile aprire la chat. Riprova per aprirla con il tuo messaggio.",
    "dismissDeliveryNotice": "Chiudi",
+   "dock": {
+    "label": "Casella dei messaggi e prompt"
+   },
    "drop": {
     "messageTitle": "Rilascia per allegare a questo messaggio",
     "subtitle": "I file vengono aggiunti al tuo messaggio come percorsi che l’agente può leggere.",
@@ -21400,6 +22140,8 @@
     "attachmentsExpired": "Scaduto: {{names}}.",
     "backgroundTaskNotStopped": "L’attività in background non è stata arrestata.",
     "backgroundTasksNotStopped": "Le attività in background non sono state arrestate.",
+    "botToolsGatewayOutdated": "Il gateway di {{agent}} esegue ancora una versione precedente del plugin di Orca, quindi gli strumenti di questo bot non possono agire come il bot. Esegui `hermes gateway stop`, poi avvia una nuova chat.",
+    "botToolsNeedStatusHooks": "I bot di {{agent}} richiedono gli Hook di stato dell’agente: permettono agli strumenti di un bot di agire come il bot. Attivali per {{agent}} in Impostazioni → Agenti, poi avvia una nuova chat.",
     "cancelUnconfirmed": "L’annullamento non è stato confermato.",
     "cancelled": "Questo messaggio è stato ritirato prima che l’agente iniziasse a elaborarlo.",
     "chatClosed": "La chat è stata chiusa prima che questo messaggio fosse inviato.",
@@ -21558,6 +22300,13 @@
     "settingsRejected": "Codex non ha potuto applicare il modello e l’impegno selezionati. Questa modifica dell’obiettivo non è stata inviata. Controlla la selezione e riprova.",
     "settingsUnconfirmed": "Codex non ha confermato il modello e l’impegno selezionati. Questa modifica dell’obiettivo non è stata inviata. Controlla la chat e riprova.",
     "stopUnconfirmed": "Codex non ha potuto confermare l’arresto. Controlla la chat prima di continuare."
+   },
+   "googleOffer": {
+    "reconnect": "Riconnetti {{email}}",
+    "staysDefault": "{{email}} resta quello predefinito",
+    "use": "Usa {{email}}",
+    "useAccount": "Usa {{email}} per Google.",
+    "useAnother": "Usa un altro account"
    },
    "hostOutage": {
     "connecting": "Connessione a {{distro}}…",
@@ -21738,6 +22487,14 @@
     "many_other": "{{count}} pull request aperte",
     "one": "Aperta {{name}}"
    },
+   "pairedServerAsk": {
+    "always": "Consenti sempre {{server}}",
+    "deny": "Nega",
+    "once": "Consenti una volta",
+    "thisServer": "questo server",
+    "title": "{{from}} vuole scrivere a {{to}} su questo computer",
+    "titlePills": "<from>{{from}}</from> vuole scrivere a <to>{{to}}</to> su questo computer"
+   },
    "providerFrame": {
     "byteCount": "{{count}} byte",
     "byteCount_many": "{{count}} byte",
@@ -21745,20 +22502,30 @@
     "byteCount_other": "{{count}} byte"
    },
    "question": {
+    "answered": "Risposta data",
+    "back": "Indietro",
     "cancel": "Annulla",
     "next": "Avanti",
+    "nextQuestion": "Domanda successiva",
     "otherPlaceholder": "Scrivi la tua risposta",
+    "previous": "Domanda precedente",
+    "recommended": "Consigliato",
     "send": "Invia",
     "sending": "Invio…",
     "skip": "Salta",
+    "skipAndSubmit": "Salta e invia",
     "step": "Passaggio {{value0}}",
-    "terminalRequired": "Rispondi a questa domanda di OMP nel terminale."
+    "stepAnswered": "{{value0}}, risposta data",
+    "stepLabel": "{{value0}}, {{value1}} di {{value2}}: {{value3}}",
+    "stepOf": "{{value0}} di {{value1}}",
+    "terminalRequired": "Rispondi a questa domanda di OMP nel terminale.",
+    "title": "Domanda"
    },
    "queuedMessages": {
     "alreadySent": "Questo messaggio è già stato inviato.",
     "clearAll": "Cancella tutto",
-    "collapse": "Comprimi",
     "commandsUnsupported": "I comandi non possono essere salvati in un messaggio in coda.",
+    "couldNotSend": "Impossibile inviare",
     "delete": "Elimina",
     "editChanged": "Questo messaggio è cambiato mentre lo stavi modificando. La tua modifica è nella casella di chat.",
     "editChangedNotSaved": "Questo messaggio è cambiato mentre lo modificavi. La tua modifica non è stata salvata.",
@@ -21769,27 +22536,28 @@
     "editMessage": "Modifica messaggio",
     "editReturned": "La tua modifica è nella casella della chat.",
     "editingMessage": "Modifica messaggio",
-    "expand": "Espandi",
     "fromSender": "Da",
     "imageCount": "{{count}} immagini",
     "imageCount_many": "{{count}} immagini",
     "imageCount_one": "{{count}} immagine",
     "imageCount_other": "{{count}} immagini",
     "listLabel": "Messaggi in coda",
-    "moreActions": "Altre azioni",
+    "moreRows": "+{{value0}} altri",
     "moveChanged": "La coda è cambiata prima di questo spostamento. Prova a trascinare di nuovo il messaggio.",
     "paused": "In pausa",
-    "pausedSendFailed": "Invio non riuscito — premi Invia per riprovare.",
     "pausedSendFailedWaiting": "Invio non riuscito — premi Invia per riprovare quando l’agente ha finito.",
     "queued": "In coda",
+    "queuedCount": "{{count}} in coda",
     "reorderHint": "Trascina per riordinare, oppure usa i tasti freccia Su e Giù.",
     "reorderMessage": "Riordina messaggio",
     "resume": "Riprendi",
+    "retry": "Riprova",
     "save": "Salva",
     "send": "Invia",
     "sendHint": "Invia questo messaggio ora",
     "showFullMessage": "Mostra messaggio completo",
     "showLess": "Mostra meno",
+    "showLessRows": "Mostra meno",
     "steer": "Indirizza",
     "steerHint": "Invia senza interrompere il modello",
     "withdrawnHold": "Fermato prima dell’invio"
@@ -21874,6 +22642,8 @@
     "description": "Fai una domanda a parte in un fork accanto a questa chat",
     "noReply": "Disponibile dopo la prima risposta.",
     "notReady": "Le chat laterali non sono ancora pronte. Riprova tra un momento.",
+    "pill": "Chat laterale",
+    "placeholder": "Fai una domanda a parte",
     "questionNotSent": "{{agent}} non ha ricevuto la tua domanda",
     "questionNotSentDetail": "La tua domanda è ancora in questa chat. Invia di nuovo /btw per riprovare.",
     "questionUnconfirmed": "{{agent}} non ha potuto confermare che la chat laterale abbia ricevuto la tua domanda",
@@ -22310,9 +23080,6 @@
     "showBrowserPageLabel": "Mostra {{value0}}",
     "showFullOutput": "Mostra output completo"
    },
-   "toolAdded": {
-    "added": "Aggiunto"
-   },
    "transcript": {
     "imageFallback": "Immagine"
    },
@@ -22399,6 +23166,75 @@
    "visualUnavailable": "Visualizzazione non disponibile",
    "webPeek": {
     "unavailable": "Nessuna anteprima per questa pagina."
+   },
+   "webhookSetup": {
+    "addSecret": "Aggiungi…",
+    "copiedReceipt": "✓ URL copiato",
+    "heading": "Configura un webhook",
+    "keyAndSecret": "Chiave e segreto di firma",
+    "noSecret": "Nessuno",
+    "sampleCall": "Chiamata di prova",
+    "sampleNote": "Avvia un’esecuzione reale",
+    "send": "Invia",
+    "signingSecret": "Segreto di firma"
+   },
+   "workerDock": {
+    "agent": "Agente",
+    "agentCount": "{{count}} agenti",
+    "attention": "Richiede attenzione",
+    "clear": "Rimuovi",
+    "clearAll": "Rimuovi tutti",
+    "clearAllLabel": "Rimuovi tutti i {{count}} worker non riusciti",
+    "clearName": "Rimuovi {{name}}",
+    "cleared": "Rimossi {{count}} worker",
+    "command": "Comando",
+    "commandCount": "{{count}} comandi",
+    "commandOutputPending": "L’output del comando non è ancora disponibile.",
+    "contactUnavailable": " · Ultimo contatto confermato non disponibile",
+    "coordinator": "In attesa del coordinatore",
+    "dismiss": "Chiudi",
+    "doneResult": "Fatto · apri il risultato",
+    "empty": "0 worker",
+    "failed": "Non riuscito",
+    "failedCount": "{{count}} non riusciti",
+    "finished": "Terminato",
+    "idle": "Inattivo",
+    "loadingWorker": "Caricamento del worker…",
+    "monitor": "Monitor",
+    "monitorCount": "{{count}} monitor",
+    "needsYou": "In attesa di te",
+    "needsYouCount": "In attesa di te: {{count}}",
+    "openWork": "Apri il lavoro",
+    "openWorker": "Apri worker",
+    "orderHeld": "Ordine trattenuto",
+    "remoteOwner": "Interrompilo o rimuovilo dal computer su cui è in esecuzione",
+    "restore": "Mostra di nuovo nel dock",
+    "resultUnavailable": "Risultato del worker non disponibile",
+    "retry": "Riprova",
+    "running": "In esecuzione",
+    "runningCount": "{{count}} in esecuzione",
+    "saving": "Salvataggio del risultato…",
+    "showLatest": "Mostra l’ultimo",
+    "showName": "Mostra {{name}}",
+    "startedAt": " · Avviato alle {{time}} · {{elapsed}} trascorsi",
+    "starting": "Avvio",
+    "statusChanged": "Stato cambiato",
+    "stop": "Interrompi",
+    "stopName": "Interrompi {{name}} · {{title}}",
+    "stopUnavailable": "Interrompi {{name}} · {{title}} non disponibile · {{reason}}",
+    "stoppedByYou": "Interrotto da te",
+    "stopping": "Interruzione…",
+    "task": "Attività",
+    "taskCount": "{{count}} attività",
+    "timeUnavailable": "Ora dello stato non disponibile",
+    "unavailable": "Stato del worker non disponibile",
+    "unavailableState": "Stato non disponibile",
+    "unexpected": "Interrotto in modo imprevisto",
+    "worker": "Worker",
+    "workerCount": "{{count}} worker",
+    "workersRegion": "Worker",
+    "workflow": "Workflow",
+    "workflowCount": "{{count}} workflow"
    },
    "workers": {
     "stopUnconfirmed": "Orca non ha potuto confermare che il worker si sia fermato."
@@ -22611,10 +23447,12 @@
    "workerAutoClose": {
     "bannerFinished": "Worker di orchestrazione terminato · Si chiude tra {{countdown}}",
     "bannerRunning": "Worker di orchestrazione · Si chiude 2 minuti dopo il termine",
+    "boundFallbackName": "il suo worker",
+    "boundFinished": "{{worker}} ha finito · Si chiude tra {{countdown}}",
+    "boundRunning": "Si chiude con {{worker}}",
     "finished": "Worker di orchestrazione temporaneo terminato · Si chiude tra {{countdown}}",
     "keepOpen": "Mantieni aperto",
-    "running": "Worker di orchestrazione temporaneo · Si chiude 2 minuti dopo il termine",
-    "temporaryBadge": "Temporaneo"
+    "running": "Worker di orchestrazione temporaneo · Si chiude 2 minuti dopo il termine"
    }
   },
   "orchestrationCrew": {
@@ -23036,7 +23874,6 @@
      "archiveUnavailable": "Archivio non disponibile",
      "folderWorkspaceSibling": "Un altro repository in questo spazio di lavoro è ancora in uso",
      "gitUnknown": "Impossibile leggere lo stato di Git",
-     "ignoredFiles": "File ignorati",
      "noRuleMatched": "Nessuna regola corrispondente",
      "notRemovable": "Spazio di lavoro principale o progetto cartella",
      "pinned": "Bloccato",
@@ -23276,6 +24113,7 @@
       "triState": "{{value0}}: {{value1}}"
      },
      "clearFilters": "Cancella filtri",
+     "clearSelection": "Cancella selezione",
      "comment": "Ha un commento",
      "completelyEmpty": "Niente rimasto da perdere",
      "contextPresence": "Schede, terminali e commenti aperti",
@@ -23425,9 +24263,6 @@
      "ignoredFilesBlocker": "File locali ignorati",
      "ignoredFilesNamed": "File ignorati: {{value0}}",
      "ignoredFilesUnchecked": "File ignorati non controllati del tutto"
-    },
-    "presentationFixtures": {
-     "reviewAlphaCleanup": "Rivedi la pulizia alfa"
     },
     "scan": {
      "fallbackRepository": "un repository",
@@ -24608,9 +25443,23 @@
   }
  },
  "plugins": {
+  "displayText": {
+   "t0b4f7e19": "Porting non ufficiali dei temi di colore predefiniti di VS Code: Dark Modern, Light Modern, Dark+ e Light+.",
+   "t0f9f5503": "I temi di VS Code di GitHub: Light Default, Dark Default, Dark Dimmed e le varianti ad alto contrasto.",
+   "tb0b38488": "Temi GitHub per Orca",
+   "tb8aa98fc": "Temi predefiniti di VS Code per Orca",
+   "tc86eed7d": "Un ciclo di vita di base, rivisto, per spazi di lavoro Multipass usa e getta.",
+   "tfc425a57": "Ricette per VM Multipass"
+  },
   "frameSaveAs": {
    "allFiles": "Tutti i file",
    "title": "Salva file"
+  },
+  "requiredFailures": {
+   "body": "Orca non è riuscito a installare {{plugin}}.",
+   "label": "Richiesto dal tuo team",
+   "open": "Apri Plugin",
+   "toast": "Impossibile installare un plugin richiesto"
   }
  },
  "profileState": {
@@ -24717,6 +25566,7 @@
    "table": "Tabella"
   },
   "picker": {
+   "chooseProject": "Scegli un progetto",
    "detailsFailed": "Impossibile caricare i dettagli",
    "listFailed": "Impossibile elencare i progetti",
    "organizations": "Organizzazioni",
@@ -24950,6 +25800,7 @@
    "sortRelevance": "Più pertinenti",
    "sortResultsAriaLabel": "Ordina risultati: {{value0}}",
    "sortSessionsAriaLabel": "Ordina sessioni: {{value0}}",
+   "titleMatchesOnly": "Nessuna corrispondenza nel testo completo. Vengono mostrate le sessioni il cui titolo o i cui dettagli corrispondono.",
    "titleOnly": "La ricerca full-text è disattivata su questo computer, quindi vengono trovati solo i titoli delle sessioni.",
    "truncated": "Alcuni risultati o testi corrispondenti sono stati limitati. Restringi la ricerca per risultati più precisi.",
    "unsupportedAgent": "Questo computer non supporta la ricerca nella cronologia per l’agente selezionato. Aggiorna Orca su quel computer o seleziona un altro agente."
@@ -24960,7 +25811,6 @@
    "agentActions": "Azioni di {{agent}}",
    "approveForMe": "approva per me",
    "autoUnsupported": "Auto richiede una versione di Orca più recente su questo host.",
-   "availableRegion": "Agenti disponibili da installare",
    "chatChoiceDescription": "Scegli se ogni agente si apre come chat o nella sua CLI.",
    "chatChoiceTitle": "Apri come chat o CLI",
    "chatRuntime": "Runtime della chat",
@@ -25012,9 +25862,9 @@
    "environmentName": "Nome variabile d’ambiente",
    "environmentUnclosedQuote": "Chiudi le virgolette per salvare l’ambiente.",
    "environmentValue": "Valore per {{name}}",
+   "hideDetails": "Nascondi dettagli",
    "hostDefaults": "Valori predefiniti per i nuovi agenti sull’host selezionato.",
    "installCliForTerminal": "Installa la CLI di {{value0}} per aprirlo in un terminale.",
-   "installedRegion": "Agenti installati",
    "localSaveFailed": "Impossibile salvare le impostazioni degli agenti. Riprova.",
    "localSaveFailedAgent": "Impossibile salvare le impostazioni di {{agent}}. Riprova.",
    "modelListFallback": "Elenco integrato. Orca non ha potuto ottenere un elenco di modelli da questo host.",
@@ -25058,6 +25908,7 @@
    "save": "Salva",
    "saveFailed": "Impossibile salvare le impostazioni agente. Controlla la connessione all’host e riprova.",
    "savedEnvironment": "Valore salvato · invio per sostituire",
+   "showDetails": "Mostra dettagli",
    "undetectedCommandHint": "Se la CLI di {{agent}} è installata fuori da PATH, inserisci il percorso completo del suo eseguibile su questo host.",
    "updateHost": "Aggiorna questo server per modificare le sue impostazioni di avvio agente."
   },
@@ -25193,6 +26044,9 @@
     "zoomOut": "Riduci zoom"
    }
   },
+  "artifacts": {
+   "teamDisabled": "La condivisione degli artefatti è disattivata dal tuo team."
+  },
   "automaticUpdates": {
    "description": "Nelle installazioni desktop supportate, Orca scarica gli aggiornamenti idonei secondo la sua pianificazione regolare dei controlli e si riavvia per installarli automaticamente.",
    "info": "Informazioni sugli aggiornamenti automatici",
@@ -25209,6 +26063,7 @@
    "askNewHomeChat": "Chiedi conferma prima di una nuova Home Chat",
    "askNewHomeChatDescription": "Chiede conferma prima che Nuova Home Chat sostituisca la conversazione di un bot.",
    "avatarSlackNote": "Cambia anche l’immagine del tuo bot su Slack.",
+   "avatarSlackNoteColor": "Slack riceve l’immagine, non il colore.",
    "cancel": "Annulla",
    "comingSoon": "Prossimamente",
    "composioEventsAnotherComputer": "un altro computer",
@@ -25365,6 +26220,7 @@
    "soulRead": "Leggi",
    "soulStats": "{{lines}} righe · {{words}} parole",
    "soulView": "Vista del soul",
+   "teamDisabled": "I bot sono disattivati dal tuo team.",
    "tidyUp": {
     "changes": "{{count}} modifiche",
     "done": "Fatto",
@@ -25570,7 +26426,7 @@
     "useHost": "Usa host SSH"
    },
    "userAgent": {
-    "description": "Scegli lo user agent per ogni profilo del browser e ogni pagina. La modalità nativa disattiva l’accesso Google. Le modifiche hanno effetto dopo un riavvio.",
+    "descriptionPageKinds": "Scegli lo user agent per ogni pagina mostrata da questo computer, comprese le pagine SSH e le pagine remote impostate su Questo dispositivo. Le modifiche hanno effetto dopo il riavvio.",
     "loading": "Caricamento…",
     "optionClean": "Ripulita",
     "optionCleanTooltip": "Rimuove i token di Orca ed Electron per corrispondere alle sessioni Chrome importate.",
@@ -25580,6 +26436,7 @@
     "resetRequired": "I dati dell’identità devono essere reimpostati esplicitamente prima di poter essere modificati.",
     "resetRequiredCommand": "Reimpostala dalla riga di comando: orca browser identity set --mode <mode> --reset",
     "restartRequired": "Riavvio necessario",
+    "serverPagesNote": "Le pagine del server (in streaming) usano l’identità di quel server; impostala lì con orca browser identity set.",
     "title": "Identità del browser",
     "unavailable": "L’identità del browser non è disponibile."
    }
@@ -25624,6 +26481,19 @@
     "searchTerminal": "terminale",
     "title": "Provider"
    }
+  },
+  "cloudConsole": {
+   "manageInBrowser": "Gestisci nel browser",
+   "openFailed": "Impossibile aprire il browser. Riprova.",
+   "signInFailed": "Impossibile accedere alla console",
+   "signInFailedDetail": "Il browser l’ha aperta comunque. Accedi lì per continuare.",
+   "teamAdmin": {
+    "description": "Gestisci il tuo team nel browser.",
+    "title": "Team e amministrazione"
+   }
+  },
+  "computerUse": {
+   "teamDisabled": "Computer Use è disattivato dal tuo team."
   },
   "diagnostics": {
    "errors": {
@@ -25808,6 +26678,9 @@
    "stdioServer": "Server stdio",
    "unreadable": "Illeggibile",
    "workspace": "Spazio di lavoro"
+  },
+  "mobile": {
+   "teamDisabledRelay": "Orca Relay è disattivato dal tuo team. Usa la LAN."
   },
   "network": {
    "proxyUrlErrors": {
@@ -26052,6 +26925,7 @@
    "progress": "Tempo prima che Orca {{version}} sia disponibile",
    "released": "Rilasciato {{released}}",
    "skipDelayOnceHint": "Cerca subito questa versione. L’impostazione del ritardo resta invariata.",
+   "teamManaged": "Impostato dal tuo team",
    "upToDateWithHeld": "Sei aggiornato. Una versione più recente è in attesa fino al {{date}}."
   },
   "voice": {
@@ -26901,6 +27775,11 @@
    "openSettings": "Apri Impostazioni",
    "title": "Orca ora esegue Codex senza il suo server condiviso"
   },
+  "fileDrop": {
+   "copyUploadedPaths": "Copia percorsi",
+   "copyUploadedPathsFailed": "Impossibile copiare i percorsi caricati.",
+   "uploadedWithoutPaste": "Caricamento completato, ma non è stato possibile incollare i percorsi nel terminale."
+  },
   "newerDaemonBanner": {
    "failedTitle": "Non è stato possibile riaprire questo terminale",
    "reopenTerminal": "Riapri {{count}} terminali",
@@ -26930,6 +27809,7 @@
    "openNewTerminal": "Apri nuovo terminale"
   },
   "recentImages": {
+   "copied": "Copiato",
    "copyPath": "Copia percorso",
    "open": "Apri anteprima",
    "pasted": "Immagine incollata",
@@ -26969,6 +27849,9 @@
    "installing": "Installazione di Orca {{version}}…",
    "restarting": "Orca si riavvierà automaticamente."
   },
+  "emergencyRequired": {
+   "summary": "Orca {{version}} è obbligatorio. Riavvia per aggiornare."
+  },
   "failure": {
    "automaticInstallCheckpointFailed": "Orca non è riuscito a salvare la finestra corrente prima del riavvio. Prova a installare di nuovo l’aggiornamento.",
    "automaticInstallTerminalBusy": "Alcuni terminali verrebbero chiusi al riavvio. Orca riproverà a un controllo successivo.",
@@ -27000,6 +27883,7 @@
    "releaseListUnreadable": "Impossibile leggere l’elenco delle versioni {{channel}}.",
    "releaseNotReady": "Non è ancora disponibile una versione più recente per questo dispositivo. Ricontrolla più tardi.",
    "releaseRepoNotFound": "Nessun repository di versioni trovato in {{repo}}.",
+   "teamUpdatePolicy": "Il tuo team gestisce gli aggiornamenti di Orca.",
    "unknownReleaseChannel": "Canale di rilascio sconosciuto \"{{channel}}\".",
    "unsignedDevChannel": "Le versioni {{channel}} non sono firmate e questa versione firmata installa solo aggiornamenti firmati dall’editore di Orca. Scarica il programma di installazione dalla pagina delle versioni ed eseguilo una volta; poi gli aggiornamenti funzioneranno normalmente, anche per tornare a Stable.",
    "updateServerUnreachable": "Impossibile contattare il server degli aggiornamenti. Riprova tra qualche minuto."
@@ -27018,6 +27902,9 @@
    "windowLabel": "Altra finestra di Orca"
   },
   "remoteUpdateBusy": "Questo server è già in aggiornamento. Ricontrolla quando ha finito.",
+  "teamRequired": {
+   "summary": "Il tuo team richiede Orca {{version}}. Riavvia per aggiornare."
+  },
   "wslMoveInstallHeld": "Un progetto si sta spostando sul suo host WSL. Installa l’aggiornamento quando lo spostamento è terminato.",
   "wslMoveUndoInstallHeld": "Un progetto sta tornando dal suo host WSL. Installa l’aggiornamento quando l’operazione è terminata."
  },
