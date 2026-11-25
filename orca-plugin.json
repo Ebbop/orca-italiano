@@ -4,8 +4,8 @@
  "execution": "data",
  "id": "italiano",
  "name": "Italiano",
- "version": "1.4.273",
- "description": "jAI Studio · 22.688 testi su 22.690 (99.9%), allineato a Orca 1.4.273. Pacchetto della community, non ufficiale.",
+ "version": "1.4.274",
+ "description": "jAI Studio · 22.690 testi su 22.690 (100%), allineato a Orca 1.4.274. Pacchetto della community, non ufficiale.",
  "engines": {
   "orca": ">=1.4.246"
  },

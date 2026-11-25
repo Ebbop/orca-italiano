@@ -19214,8 +19214,9 @@
     "continue": "Continua",
     "description": "Scegli come {{bot}} accede a Gmail, Calendar e Drive.",
     "orca": "Ospitato da Orca",
-    "orcaNote": "Accedi con Google. Niente da configurare.",
+    "orcaNote": "Accedi con Google.",
     "self": "Auto-ospitato",
+    "selfNote": "La tua app Google.",
     "soon": "Presto"
    },
    "importSetupFile": "Importa file",
@@ -21623,6 +21624,7 @@
    "cancelledBody": "Non è stato installato nulla.",
    "cancelledTitle": "Installazione annullata",
    "cancelling": "Annullamento…",
+   "checkingDetail": "Verifica di {{agent}}…",
    "checkingTitle": "Verifica del download",
    "continueTitle": "Installa {{agent}} per continuare",
    "damaged": "Questa copia di {{agent}} è danneggiata.",
