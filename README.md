@@ -8,8 +8,8 @@ Solo dati: non esegue codice e non chiede autorizzazioni. A cura di [jAI Studio]
 ## Perché questo pacchetto
 
 - **Tutto tradotto, misurato.** A ogni versione si estrae dall’Orca installato l’elenco completo dei testi
-  traducibili e si confronta con la traduzione: per Orca 1.4.271 sono 22.000 su 22.000. Il numero è
-  scritto nella descrizione del plugin, così si vede prima di installarlo.
+  traducibili e si confronta con la traduzione. Il conteggio aggiornato (testi tradotti su testi totali)
+  è scritto nella descrizione del plugin, così si vede prima di installarlo.
 - **Pensato per i limiti di Orca.** Il pacchetto viene costruito con gli stessi controlli che Orca applica
   al caricamento: segnaposto identici all’inglese, lunghezza massima, testi protetti esclusi. Nessun testo
   viene scartato in silenzio, e l’italiano resta sempre nel menu Lingua.
@@ -46,6 +46,6 @@ Apri una issue con il testo che vedi, dove lo vedi e come lo scriveresti. Uno sc
 # Italian for Orca
 
 Unofficial, community-made Italian UI language pack for Orca by [jAI Studio](https://jaistudio.it). Data only.
-Covers every translatable string of the Orca version it is aligned to (22,000 of 22,000 for 1.4.271), built
+Covers every translatable string of the Orca version it is aligned to (the current count is in the plugin description), built
 against Orca’s own load-time limits. Not affiliated with or endorsed by Stably / Lovecast Inc. Licensed under
 MIT; see `LICENSE`.
