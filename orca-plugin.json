@@ -4,8 +4,8 @@
  "execution": "data",
  "id": "italiano",
  "name": "Italiano",
- "version": "1.4.274",
- "description": "jAI Studio · Spazi di lavoro, agenti e impostazioni di Orca nella tua lingua. 22.690 testi su 22.690 (100%), allineato a Orca 1.4.274. Pacchetto della community, non ufficiale.",
+ "version": "1.4.278",
+ "description": "jAI Studio · Spazi di lavoro, agenti e impostazioni di Orca nella tua lingua. 23.102 testi su 23.102 (100%), allineato a Orca 1.4.278. Pacchetto della community, non ufficiale.",
  "engines": {
   "orca": ">=1.4.246"
  },
